@@ -7,14 +7,14 @@ Introduction
 In this section, we will guide you through the process of installing Ubuntu on VirtualBox. VirtualBox is a powerful virtualization software that allows you to create and run virtual machines on your host operating system. Installing Ubuntu in a virtual machine enables you to practice the course material without affecting your main system.
 
 Step 1: Downloading Ubuntu ISO Image
------------------------------------
+-------------------------------------
 
 Before you begin, download the latest Ubuntu Desktop ISO image from the official website. Make sure to choose the appropriate version for your system, such as a 64-bit or 32-bit image. 
 
 :download:`Ubuntu_22.04.2 <https://ubuntu.com/download/desktop/thank-you?version=22.04.2&architecture=amd64>`
 
 Step 2: Creating a New Virtual Machine
--------------------------------------
+---------------------------------------
 
 1. Open VirtualBox and click on the "New" button to create a new virtual machine.
 2. Give your virtual machine a name (e.g., "Ubuntu_ASE") and select "Linux" as the Type, and "Ubuntu (64-bit)" as the Version (or choose the appropriate version based on your ISO image).
@@ -22,14 +22,14 @@ Step 2: Creating a New Virtual Machine
 4. Choose "Create a virtual hard disk now" and click "Create."
 
 Step 3: Installing Ubuntu on the Virtual Machine
------------------------------------------------
+-------------------------------------------------
 
 1. In the VirtualBox Manager, select the newly created virtual machine and click on the "Start" button.
 2. When prompted, browse and select the Ubuntu ISO image you downloaded earlier.
 3. Follow the on-screen instructions to install Ubuntu on the virtual machine. You can choose the default options or customize the installation based on your preferences.
 
 Step 4: Essential Post-Installation Setup
-----------------------------------------
+------------------------------------------
 
 After Ubuntu is installed on the virtual machine, you may need to perform some post-installation setup:
 
@@ -50,7 +50,7 @@ After Ubuntu is installed on the virtual machine, you may need to perform some p
       sudo ./autorun.sh
 
 Step 5: Install gcc and gfortran libraries
---------------------------
+-------------------------------------------
 
 
 
