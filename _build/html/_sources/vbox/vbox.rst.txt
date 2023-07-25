@@ -9,7 +9,9 @@ In this section, we will guide you through the process of installing Ubuntu on V
 Step 1: Downloading Ubuntu ISO Image
 -----------------------------------
 
-Before you begin, download the latest Ubuntu Desktop ISO image from the official website. Make sure to choose the appropriate version for your system, such as a 64-bit or 32-bit image.
+Before you begin, download the latest Ubuntu Desktop ISO image from the official website. Make sure to choose the appropriate version for your system, such as a 64-bit or 32-bit image. 
+
+:download:`Ubuntu_22 <https://ubuntu.com/download/desktop/thank-you?version=22.04.2&architecture=amd64>`
 
 Step 2: Creating a New Virtual Machine
 -------------------------------------
