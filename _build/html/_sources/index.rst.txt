@@ -13,6 +13,7 @@ Welcome to pythonatomistics's documentation!
    :caption: Contents
 
    vbox/vbox
+   basics/basics.rst
 
 
 
