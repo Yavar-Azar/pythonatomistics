@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python for Atomistic Simulation &mdash; pythonatomistics 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Installing Ubuntu on VirtualBox" href="../vbox/vbox.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pythonatomistics
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../vbox/vbox.html">Installing Ubuntu on VirtualBox</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python for Atomistic Simulation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-a-virtual-environment">Setting up a Virtual Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-ase">Installing ASE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#part-3-python-basics-review">Part 3: Python Basics Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-to-python">Introduction to Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#variables-and-data-types">Variables and Data Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#control-flow-conditional-statements-and-loops">Control Flow - Conditional Statements and Loops</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-basics">NumPy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-to-matplotlib">Introduction to Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pythonatomistics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Python for Atomistic Simulation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/basics/basics.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="python-for-atomistic-simulation">
+<h1>Python for Atomistic Simulation<a class="headerlink" href="#python-for-atomistic-simulation" title="Permalink to this heading"></a></h1>
+<section id="setting-up-a-virtual-environment">
+<h2>Setting up a Virtual Environment<a class="headerlink" href="#setting-up-a-virtual-environment" title="Permalink to this heading"></a></h2>
+<p>First, let’s set up a virtual environment using <cite>virtualenv</cite>. If you haven’t installed <cite>virtualenv</cite> yet, you can do it by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>virtualenv
+</pre></div>
+</div>
+<p>Once <cite>virtualenv</cite> is installed, let’s create the virtual environment named “envase”:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virtualenv<span class="w"> </span>envase
+</pre></div>
+</div>
+<p>Next, activate the virtual environment (on macOS/Linux):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>envase/bin/activate
+</pre></div>
+</div>
+</section>
+<section id="installing-ase">
+<h2>Installing ASE<a class="headerlink" href="#installing-ase" title="Permalink to this heading"></a></h2>
+<p>Now that we have the virtual environment set up, let’s proceed to install ASE (Atomic Simulation Environment). We’ll use <cite>pip</cite> to install it within the virtual environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>ase
+</pre></div>
+</div>
+<p>ASE is now successfully installed in your virtual environment and ready to use!</p>
+</section>
+<section id="part-3-python-basics-review">
+<h2>Part 3: Python Basics Review<a class="headerlink" href="#part-3-python-basics-review" title="Permalink to this heading"></a></h2>
+<p>Let’s start with a brief review of some Python basics. We’ll cover the introduction to Python, variables and data types, control flow, loops, functions, and an overview of NumPy and Matplotlib.</p>
+</section>
+<section id="introduction-to-python">
+<h2>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permalink to this heading"></a></h2>
+<p>Python is a versatile, high-level programming language that’s easy to learn and widely used in various fields, including scientific computing and data analysis.</p>
+<section id="variables-and-data-types">
+<h3>Variables and Data Types<a class="headerlink" href="#variables-and-data-types" title="Permalink to this heading"></a></h3>
+<p>In Python, you can declare variables and assign values to them. Python is dynamically typed, meaning you don’t need to specify the data type explicitly.</p>
+<p>Python Code for Variables and Data Types:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Variables and Data Types</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mf">1.75</span>
+<span class="n">is_student</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="control-flow-conditional-statements-and-loops">
+<h3>Control Flow - Conditional Statements and Loops<a class="headerlink" href="#control-flow-conditional-statements-and-loops" title="Permalink to this heading"></a></h3>
+<p>Python provides various control flow constructs, such as if-else statements and loops (for and while), to control the program’s flow based on conditions.</p>
+<p>Python Code for Control Flow:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Control Flow</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are a minor.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are an adult.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are a senior citizen.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Loops</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loop iteration: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># While Loop</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;While loop iteration: </span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h2>
+<p>Functions allow us to group a block of code and execute it whenever needed. They promote code reusability and modularity.</p>
+<p>Python Code for Functions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Functions</span>
+<span class="k">def</span> <span class="nf">greet_user</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">! Welcome to our course.&quot;</span><span class="p">)</span>
+
+<span class="n">greet_user</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="numpy-basics">
+<h2>NumPy Basics<a class="headerlink" href="#numpy-basics" title="Permalink to this heading"></a></h2>
+<p>NumPy is a fundamental library for numerical computing in Python. It provides support for large, multi-dimensional arrays and matrices, along with an extensive collection of high-level mathematical functions to operate on these arrays.</p>
+<p>Python Code for NumPy Basics:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Creating arrays</span>
+<span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">arr3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">arr4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Array operations</span>
+<span class="n">sum_array</span> <span class="o">=</span> <span class="n">arr1</span> <span class="o">+</span> <span class="n">arr2</span>
+<span class="n">dot_product</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">arr3</span><span class="p">,</span> <span class="n">arr4</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="introduction-to-matplotlib">
+<h2>Introduction to Matplotlib<a class="headerlink" href="#introduction-to-matplotlib" title="Permalink to this heading"></a></h2>
+<p>Matplotlib is a widely-used library for creating static, interactive, and animated plots in Python. It enables data visualization with a wide range of customization options.</p>
+<p>Python Code for Matplotlib:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Creating simple plots</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x-axis&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y-axis&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sine Function&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading"></a></h2>
+<p>Congratulations! You’ve completed the Python basics review and set up the ASE environment within your virtual environment. In the next section, we’ll delve deeper into atomistic simulations with ASE and Python.</p>
+<p>Remember to activate the virtual environment whenever you work on the course materials related to ASE to ensure a clean and isolated environment for your simulations.</p>
+<p>Happy learning and happy experimenting with Python for Atomistic Simulation!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../vbox/vbox.html" class="btn btn-neutral float-left" title="Installing Ubuntu on VirtualBox" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Yavar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

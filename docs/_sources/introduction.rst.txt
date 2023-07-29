@@ -15,7 +15,7 @@ Course Objectives
 - Familiarize learners with the Atomic Simulation Environment (ASE) and its Python API for DFT calculations.
 - Provide practical examples using Quantum Espresso for solid-state materials simulations.
 - Explore quantum chemistry calculations with NWChem for molecular properties and reactions.
-- Showcase advanced topics like machine learning in DFT and integrating Python with other tools for high-throughput calculations.
+- Introduce some advanced tools to generate descriptors for machine learning based simulations.
 
 Who Should Take This Course?
 ----------------------------
@@ -31,5 +31,5 @@ Prerequisites
 Let's get started on this exciting journey into the world of atomistic simulations with Python!
 
 .. note::
-   The examples in this course are provided with code snippets and step-by-step instructions. You can find the complete code and materials on our GitHub repository for this course.
+   The examples in this course are provided with code snippets and step-by-step instructions. You can find the complete code and materials on GitHub repository for this course https://yavar-azar.github.io/pythonatomistics .
 
