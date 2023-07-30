@@ -13,8 +13,11 @@ Welcome to pythonatomistics's documentation!
    introduction
    vbox/vbox
    basics/basics.rst
+   crystal/crystal
    asebasics/asebasics
    dft/dft
+   qease/qease
+   nwase/nwase
 
 
 

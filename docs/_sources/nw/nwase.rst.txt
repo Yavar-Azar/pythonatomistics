@@ -1,0 +1,133 @@
+Running NWChem Calculations and Analyzing Molecular Orbitals and Charge Density with ASE
+=======================================================================================
+
+.. raw:: html
+
+   <h2 style="text-align: center;">Course Material</h2>
+
+Welcome to the course on "Running NWChem Calculations and Analyzing Molecular Orbitals and Charge Density" using the Atomic Simulation Environment (ASE). In this course, you will learn how to perform quantum chemical calculations with NWChem and extract molecular orbitals and charge density using ASE.
+
+Prerequisites
+-------------
+
+Before starting this course, make sure you have the following installed on your system:
+
+1. Python with pip (to install ASE).
+2. NWChem (installed separately from the ASE).
+
+Downloading Amino Acid Structures from PDB
+------------------------------------------
+
+In this section, we will download the structures of amino acids from the Protein Data Bank (PDB) and read them using ASE.
+
+1. Install ASE
+   - You can install ASE using pip with the following command:
+
+     .. code-block:: bash
+
+        pip install ase
+
+2. Import ASE modules
+   - Import the necessary ASE modules to work with molecular structures:
+
+     .. code-block:: python
+
+        from ase.io import read
+
+3. Download PDB files
+   - Download the PDB files for amino acids from the Protein Data Bank (https://www.rcsb.org/).
+   - Save the PDB files in your working directory.
+
+4. Read PDB files
+   - Use the `read` function from ASE to read the PDB files and create ASE `Atoms` objects:
+
+     .. code-block:: python
+
+        amino_acid1 = read('amino_acid1.pdb')
+        amino_acid2 = read('amino_acid2.pdb')
+        # Add more amino acids as needed
+
+Creating NWChem Calculator in ASE
+---------------------------------
+
+Now that we have our amino acid structures loaded as `Atoms` objects, we will create NWChem calculators to perform quantum chemical calculations.
+
+1. Import NWChem calculator
+   - Import the `Nwchem` calculator from ASE to interface with NWChem:
+
+     .. code-block:: python
+
+        from ase.calculators.nwchem import Nwchem
+
+2. Set up NWChem calculator
+   - Create an NWChem calculator for the first amino acid:
+
+     .. code-block:: python
+
+        # Set up the NWChem calculator for amino acid1
+        amino_acid1_calc = Nwchem(
+            label='amino_acid1', # Calculation label
+            task='scf',          # Self-consistent field calculation
+            basis='6-31G',       # Basis set (6-31G for a balanced compromise between accuracy and efficiency)
+            charge=0,            # Charge of the system (0 for neutral amino acid)
+            multiplicity=1,      # Multiplicity of the system (1 for singlet)
+            xc='B3LYP',          # Exchange-correlation functional (B3LYP for good accuracy in molecular properties)
+            coordinates='amino_acid1.xyz' # XYZ file with atomic coordinates
+        )
+
+        # Attach the calculator to the amino acid1 structure
+        amino_acid1.set_calculator(amino_acid1_calc)
+
+   - Repeat the above steps to create calculators for other amino acids with appropriate basis sets and parameters.
+
+Running NWChem Calculations
+---------------------------
+
+Now that we have set up the NWChem calculators, let's run the quantum chemical calculations for the amino acids.
+
+1. Calculate the potential energy of amino acid1
+   - Use the `get_potential_energy()` method of the `Atoms` object to perform the calculation:
+
+     .. code-block:: python
+
+        aa1_energy = amino_acid1.get_potential_energy()
+        print('Amino Acid 1 total energy:', aa1_energy, 'eV')
+
+   - Repeat the above step for other amino acids.
+
+Analyzing Molecular Orbitals and Charge Density
+-----------------------------------------------
+
+ASE allows us to extract molecular orbitals and charge density from NWChem calculations.
+
+1. Access molecular orbitals
+   - Use the `get_molecular_orbitals()` method of the `Atoms` object to obtain molecular orbital information:
+
+     .. code-block:: python
+
+        # Get molecular orbitals for amino acid1
+        mo_coefficients, mo_energies, mo_occ = amino_acid1.get_molecular_orbitals()
+
+        # Print molecular orbital energies for amino acid1
+        print('Molecular Orbital Energies for Amino Acid 1:')
+        print(mo_energies)
+
+   - Repeat the above step for other amino acids.
+
+2. Access charge density
+   - Use the `get_atomic_numbers()` and `get_atomic_spins()` methods to extract atomic numbers and spins for the system:
+
+     .. code-block:: python
+
+        # Get atomic numbers and spins for amino acid1
+        atomic_numbers = amino_acid1.get_atomic_numbers()
+        atomic_spins = amino_acid1.get_atomic_spins()
+
+   - Use the above information to extract and analyze the charge density from the NWChem calculation results.
+
+Conclusion
+----------
+
+Congratulations! You have completed the course on "Running NWChem Calculations and Analyzing Molecular Orbitals and Charge Density" using ASE. You have learned how to set up NWChem calculators in ASE, perform quantum chemical calculations for amino acids, and extract molecular orbital and charge density information from the calculations.
+
+Continue your exploration of computational chemistry and materials science with NWChem and ASE. Apply the knowledge gained in this course to study more complex molecular systems, perform electronic structure calculations, and analyze molecular properties. Happy computational chemistry with NWChem and ASE!

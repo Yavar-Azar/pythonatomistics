@@ -16,6 +16,8 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
+        <script>window.MathJax = {"tex": {"macros": {"br": "{\\mathbf r}", "bk": "{\\mathbf k}", "bG": "{\\mathbf G}"}}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -93,13 +95,13 @@
 <h1>Python for Atomistic Simulation<a class="headerlink" href="#python-for-atomistic-simulation" title="Permalink to this heading"></a></h1>
 <section id="setting-up-a-virtual-environment">
 <h2>Setting up a Virtual Environment<a class="headerlink" href="#setting-up-a-virtual-environment" title="Permalink to this heading"></a></h2>
-<p>First, let’s set up a virtual environment using <cite>virtualenv</cite>. If you haven’t installed <cite>virtualenv</cite> yet, you can do it by running the following command:</p>
+<p>First, let’s set up a virtual environment using <span class="math notranslate nohighlight">\(virtualenv\)</span>. If you haven’t installed <span class="math notranslate nohighlight">\(virtualenv\)</span> yet, you can do it by running the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-tk
 pip3<span class="w"> </span>install<span class="w"> </span>virtualenv
 </pre></div>
 </div>
-<p>Once <cite>virtualenv</cite> is installed, let’s create the virtual environment named “envase”:</p>
+<p>Once <span class="math notranslate nohighlight">\(virtualenv\)</span> is installed, let’s create the virtual environment named “envase”:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virtualenv<span class="w"> </span>envase
 </pre></div>
 </div>
@@ -112,7 +114,7 @@ which<span class="w"> </span>pip
 </section>
 <section id="installing-ase">
 <h2>Installing ASE<a class="headerlink" href="#installing-ase" title="Permalink to this heading"></a></h2>
-<p>Now that we have the virtual environment set up, let’s proceed to install ASE (Atomic Simulation Environment). We’ll use <cite>pip</cite> to install it within the virtual environment:</p>
+<p>Now that we have the virtual environment set up, let’s proceed to install ASE (Atomic Simulation Environment). We’ll use <span class="math notranslate nohighlight">\(pip\)</span> to install it within the virtual environment:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>ase
 </pre></div>
 </div>
