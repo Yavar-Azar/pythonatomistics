@@ -1,0 +1,60 @@
+Basics of Crystallography
+===============================
+
+Before delving into ab-initio calculations with solid-state packages, it is essential to review some fundamental concepts in solid-state physics.
+
+Crystal Structure
+~~~~~~~~~~~~~~~~~~
+
+In crystallography, the *crystal structure* refers to the ordered arrangement of atoms, ions, or molecules in a crystalline material. These ordered structures arise from the intrinsic nature of the constituent particles, forming symmetric patterns that repeat along the principal directions in three-dimensional space.
+
+Unit Cell and Lattice
+~~~~~~~~~~~~~~~~~~~~~
+
+The smallest group of particles in the material that constitutes this repeating pattern is known as the *unit cell*. It fully reflects the symmetry and structure of the entire crystal, resulting from the repetitive translation of the unit cell along its principal axes. The translation vectors define the nodes of the *Bravais lattice*, an imaginary concept.
+
+.. figure:: ./Figs/Basis.jpg
+   :width: 220 px
+   :align: center
+
+The crystal structure is formed when the group of atoms or molecules is arranged identically at the lattice points. This group of atoms or molecules is called the *basis*.
+
+Lattice Planes and Directions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The notation system of *Miller indices* represents planes in crystal (Bravais) lattices. A family of lattice planes is determined by three integers h, k, and l, which are the Miller indices.
+
+.. figure:: ./Figs/latticeplane.jpeg
+   :align: center
+
+Reciprocal Lattice
+~~~~~~~~~~~~~~~~~~~~~
+
+In addition to the direct lattice in ordinary space, it is crucial to consider the *reciprocal lattice* in dual (or reciprocal) space when studying crystals. The reciprocal lattice is defined by three primitive vectors :math:`\vec{g_1}`, :math:`\vec{g_2}`, and :math:`\vec{g_3}`.
+
+The *Brillouin zone* is a uniquely defined primitive cell in reciprocal space.
+
+.. figure:: ./Figs/BZ.png
+  :align: center
+  :width: 200px
+
+Crystal Symmetry and Space Groups
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The space groups in three dimensions are formed from combinations of the 32 crystallographic point groups with the 14 Bravais lattices, each belonging to one of the 7 lattice systems.
+
+Additional Resources
+~~~~~~~~~~~~~~~~~~~~~~~
+
+To explore and analyze problems of structural and mathematical crystallography, solid-state physics, and structural chemistry, the `Bilbao Crystallographic Server`_ offers an open-access website with an online crystallographic database and programs.
+
+.. role:: file
+
+Example
+~~~~~~~~~~~~~~~~~~~~~~~
+Open a CIF (:file:`./CsPbI3.cif`) file and find the lattice constants and basis vectors.
+
+
+
+
+.. _Bilbao Crystallographic Server: https://www.cryst.ehu.es/

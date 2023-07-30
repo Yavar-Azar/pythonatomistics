@@ -16,6 +16,8 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
+        <script>window.MathJax = {"tex": {"macros": {"br": "{\\mathbf r}", "bk": "{\\mathbf k}", "bG": "{\\mathbf G}"}}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -173,7 +175,7 @@
 </section>
 <section id="step-2-creating-atomic-structures-with-the-atoms-object">
 <h2>Step 2: Creating Atomic Structures with the Atoms Object<a class="headerlink" href="#step-2-creating-atomic-structures-with-the-atoms-object" title="Permalink to this heading"></a></h2>
-<p>ASE represents atomic structures using the <cite>Atoms</cite> object. Let’s create and manipulate atomic structures programmatically:</p>
+<p>ASE represents atomic structures using the <span class="math notranslate nohighlight">\(Atoms\)</span> object. Let’s create and manipulate atomic structures programmatically:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span>
 
 <span class="c1"># Create a water molecule</span>
@@ -224,7 +226,7 @@
 <span class="n">transformed_water</span><span class="o">.</span><span class="n">set_cell</span><span class="p">(</span><span class="n">transformed_water</span><span class="o">.</span><span class="n">cell</span> <span class="o">@</span> <span class="n">transformation_matrix</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Now you have explored ASE’s graphical and command line interfaces, including periodic models, reciprocal lattice, nanostructures, and important concepts like the <cite>Atoms</cite> object, file IO, calculators, and supercells. These skills provide a strong foundation for your atomistic simulation journey!</p>
+<p>Now you have explored ASE’s graphical and command line interfaces, including periodic models, reciprocal lattice, nanostructures, and important concepts like the <span class="math notranslate nohighlight">\(Atoms\)</span> object, file IO, calculators, and supercells. These skills provide a strong foundation for your atomistic simulation journey!</p>
 <p>That’s it for this section. In the next section, we’ll delve into more advanced concepts using ASE for solid-state physics and quantum chemistry simulations.</p>
 <p>Happy exploring and happy learning with Python for Atomistic Simulation!</p>
 </section>

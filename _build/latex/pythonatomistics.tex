@@ -268,7 +268,7 @@ Happy learning and experimenting with Python for Atomistic Simulation!
 \section{Setting up a Virtual Environment}
 \label{\detokenize{basics/basics:setting-up-a-virtual-environment}}
 \sphinxAtStartPar
-First, let’s set up a virtual environment using \sphinxtitleref{virtualenv}. If you haven’t installed \sphinxtitleref{virtualenv} yet, you can do it by running the following command:
+First, let’s set up a virtual environment using \(virtualenv\). If you haven’t installed \(virtualenv\) yet, you can do it by running the following command:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 sudo\PYG{+w}{ }apt\PYG{+w}{ }install\PYG{+w}{ }python3\PYGZhy{}pip
@@ -277,7 +277,7 @@ pip3\PYG{+w}{ }install\PYG{+w}{ }virtualenv
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-Once \sphinxtitleref{virtualenv} is installed, let’s create the virtual environment named “envase”:
+Once \(virtualenv\) is installed, let’s create the virtual environment named “envase”:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 virtualenv\PYG{+w}{ }envase
@@ -296,7 +296,7 @@ which\PYG{+w}{ }pip
 \section{Installing ASE}
 \label{\detokenize{basics/basics:installing-ase}}
 \sphinxAtStartPar
-Now that we have the virtual environment set up, let’s proceed to install ASE (Atomic Simulation Environment). We’ll use \sphinxtitleref{pip} to install it within the virtual environment:
+Now that we have the virtual environment set up, let’s proceed to install ASE (Atomic Simulation Environment). We’ll use \(pip\) to install it within the virtual environment:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 pip\PYG{+w}{ }install\PYG{+w}{ }ase
@@ -441,6 +441,80 @@ Happy learning and happy experimenting with Python for Atomistic Simulation!
 \sphinxstepscope
 
 
+\chapter{Basics of Crystallography}
+\label{\detokenize{crystal/crystal:basics-of-crystallography}}\label{\detokenize{crystal/crystal::doc}}
+\sphinxAtStartPar
+Before delving into ab\sphinxhyphen{}initio calculations with solid\sphinxhyphen{}state packages, it is essential to review some fundamental concepts in solid\sphinxhyphen{}state physics.
+
+
+\section{Crystal Structure}
+\label{\detokenize{crystal/crystal:crystal-structure}}
+\sphinxAtStartPar
+In crystallography, the \sphinxstyleemphasis{crystal structure} refers to the ordered arrangement of atoms, ions, or molecules in a crystalline material. These ordered structures arise from the intrinsic nature of the constituent particles, forming symmetric patterns that repeat along the principal directions in three\sphinxhyphen{}dimensional space.
+
+
+\section{Unit Cell and Lattice}
+\label{\detokenize{crystal/crystal:unit-cell-and-lattice}}
+\sphinxAtStartPar
+The smallest group of particles in the material that constitutes this repeating pattern is known as the \sphinxstyleemphasis{unit cell}. It fully reflects the symmetry and structure of the entire crystal, resulting from the repetitive translation of the unit cell along its principal axes. The translation vectors define the nodes of the \sphinxstyleemphasis{Bravais lattice}, an imaginary concept.
+
+\begin{figure}[htbp]
+\centering
+
+\noindent\sphinxincludegraphics[width=220\sphinxpxdimen]{{Basis}.jpg}
+\end{figure}
+
+\sphinxAtStartPar
+The crystal structure is formed when the group of atoms or molecules is arranged identically at the lattice points. This group of atoms or molecules is called the \sphinxstyleemphasis{basis}.
+
+
+\section{Lattice Planes and Directions}
+\label{\detokenize{crystal/crystal:lattice-planes-and-directions}}
+\sphinxAtStartPar
+The notation system of \sphinxstyleemphasis{Miller indices} represents planes in crystal (Bravais) lattices. A family of lattice planes is determined by three integers h, k, and l, which are the Miller indices.
+
+\begin{figure}[htbp]
+\centering
+
+\noindent\sphinxincludegraphics{{latticeplane}.jpeg}
+\end{figure}
+
+
+\section{Reciprocal Lattice}
+\label{\detokenize{crystal/crystal:reciprocal-lattice}}
+\sphinxAtStartPar
+In addition to the direct lattice in ordinary space, it is crucial to consider the \sphinxstyleemphasis{reciprocal lattice} in dual (or reciprocal) space when studying crystals. The reciprocal lattice is defined by three primitive vectors \(\vec{g_1}\), \(\vec{g_2}\), and \(\vec{g_3}\).
+
+\sphinxAtStartPar
+The \sphinxstyleemphasis{Brillouin zone} is a uniquely defined primitive cell in reciprocal space.
+
+\begin{figure}[htbp]
+\centering
+
+\noindent\sphinxincludegraphics[width=200\sphinxpxdimen]{{BZ}.png}
+\end{figure}
+
+
+\section{Crystal Symmetry and Space Groups}
+\label{\detokenize{crystal/crystal:crystal-symmetry-and-space-groups}}
+\sphinxAtStartPar
+The space groups in three dimensions are formed from combinations of the 32 crystallographic point groups with the 14 Bravais lattices, each belonging to one of the 7 lattice systems.
+
+
+\section{Additional Resources}
+\label{\detokenize{crystal/crystal:additional-resources}}
+\sphinxAtStartPar
+To explore and analyze problems of structural and mathematical crystallography, solid\sphinxhyphen{}state physics, and structural chemistry, the \sphinxhref{https://www.cryst.ehu.es/}{Bilbao Crystallographic Server} offers an open\sphinxhyphen{}access website with an online crystallographic database and programs.
+
+
+\section{Example}
+\label{\detokenize{crystal/crystal:example}}
+\sphinxAtStartPar
+Open a CIF (\DUrole{file}{./CsPbI3.cif}) file and find the lattice constants and basis vectors.
+
+\sphinxstepscope
+
+
 \chapter{ASE BASICS}
 \label{\detokenize{asebasics/asebasics:ase-basics}}\label{\detokenize{asebasics/asebasics::doc}}
 
@@ -578,7 +652,7 @@ ipython
 \section{Step 2: Creating Atomic Structures with the Atoms Object}
 \label{\detokenize{asebasics/asebasics:step-2-creating-atomic-structures-with-the-atoms-object}}
 \sphinxAtStartPar
-ASE represents atomic structures using the \sphinxtitleref{Atoms} object. Let’s create and manipulate atomic structures programmatically:
+ASE represents atomic structures using the \(Atoms\) object. Let’s create and manipulate atomic structures programmatically:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kn}{from} \PYG{n+nn}{ase} \PYG{k+kn}{import} \PYG{n}{Atoms}
@@ -641,7 +715,7 @@ ASE allows you to create supercells by replicating an existing structure. We’l
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-Now you have explored ASE’s graphical and command line interfaces, including periodic models, reciprocal lattice, nanostructures, and important concepts like the \sphinxtitleref{Atoms} object, file IO, calculators, and supercells. These skills provide a strong foundation for your atomistic simulation journey!
+Now you have explored ASE’s graphical and command line interfaces, including periodic models, reciprocal lattice, nanostructures, and important concepts like the \(Atoms\) object, file IO, calculators, and supercells. These skills provide a strong foundation for your atomistic simulation journey!
 
 \sphinxAtStartPar
 That’s it for this section. In the next section, we’ll delve into more advanced concepts using ASE for solid\sphinxhyphen{}state physics and quantum chemistry simulations.
@@ -764,6 +838,445 @@ Congratulations on completing the course on Density Functional Theory (DFT) and 
 
 \sphinxAtStartPar
 DFT, along with the appropriate basis set, is a powerful tool in materials science and quantum chemistry, enabling accurate and efficient simulations of complex systems. Continue exploring and applying DFT with different basis sets to solve real\sphinxhyphen{}world problems, and you’ll become a proficient user in the exciting world of computational science!
+
+\sphinxstepscope
+
+
+\chapter{Quantum ESPRESSO Calculations}
+\label{\detokenize{qease/qease:quantum-espresso-calculations}}\label{\detokenize{qease/qease::doc}}
+
+
+\sphinxAtStartPar
+Welcome to the course on “Introduction to Quantum ESPRESSO Calculations and Materials Simulation” using the Atomic Simulation Environment (ASE). In this course, you will learn the basics of quantum mechanical calculations using the Quantum ESPRESSO software package and how to perform materials simulations with ASE.
+
+
+\section{Prerequisites}
+\label{\detokenize{qease/qease:prerequisites}}
+\sphinxAtStartPar
+Before starting this course, make sure you have the following installed on your system:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Python with pip (to install ASE).
+
+\item {} 
+\sphinxAtStartPar
+Quantum ESPRESSO (installed separately from the ASE).
+
+\end{enumerate}
+
+
+\section{Downloading Crystal Structures from Materials Project}
+\label{\detokenize{qease/qease:downloading-crystal-structures-from-materials-project}}
+\sphinxAtStartPar
+In this section, we will download crystal structures of GaAs, Si, and Al from the Materials Project database and read them using ASE.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Install ASE
+\sphinxhyphen{} You can install ASE using pip with the following command:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+pip\PYG{+w}{ }install\PYG{+w}{ }ase
+\end{sphinxVerbatim}
+\end{quote}
+
+\item {} 
+\sphinxAtStartPar
+Import ASE modules
+\sphinxhyphen{} Import the necessary ASE modules to work with crystal structures:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{ase}\PYG{n+nn}{.}\PYG{n+nn}{io} \PYG{k+kn}{import} \PYG{n}{read}
+\end{sphinxVerbatim}
+\end{quote}
+
+\item {} 
+\sphinxAtStartPar
+Download CIF files
+\sphinxhyphen{} Download the CIF files for GaAs, Si, and Al from the Materials Project website (\sphinxurl{https://materialsproject.org/}).
+\sphinxhyphen{} Save the CIF files in your working directory.
+
+\item {} 
+\sphinxAtStartPar
+Read CIF files
+\sphinxhyphen{} Use the \(read\) function from ASE to read the CIF files and create ASE \(Atoms\) objects:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{gaas} \PYG{o}{=} \PYG{n}{read}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{gaas.cif}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{si} \PYG{o}{=} \PYG{n}{read}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{si.cif}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{al} \PYG{o}{=} \PYG{n}{read}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{al.cif}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+\end{quote}
+
+\end{enumerate}
+
+
+\section{Creating Quantum ESPRESSO Calculator in ASE}
+\label{\detokenize{qease/qease:creating-quantum-espresso-calculator-in-ase}}
+\sphinxAtStartPar
+Now that we have our crystal structures loaded as \(Atoms\) objects, we will create Quantum ESPRESSO calculators to perform electronic structure calculations.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Import Quantum ESPRESSO calculator
+\sphinxhyphen{} Import the \(Espresso\) calculator from ASE to interface with Quantum ESPRESSO:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{ase}\PYG{n+nn}{.}\PYG{n+nn}{calculators}\PYG{n+nn}{.}\PYG{n+nn}{espresso} \PYG{k+kn}{import} \PYG{n}{Espresso}
+\end{sphinxVerbatim}
+\end{quote}
+
+\item {} 
+\sphinxAtStartPar
+Set up Quantum ESPRESSO calculator
+\sphinxhyphen{} Create a Quantum ESPRESSO calculator for GaAs:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Set up the Quantum ESPRESSO calculator for GaAs}
+\PYG{n}{gaas\PYGZus{}calc} \PYG{o}{=} \PYG{n}{Espresso}\PYG{p}{(}\PYG{n}{pw}\PYG{o}{=}\PYG{l+m+mi}{400}\PYG{p}{,}       \PYG{c+c1}{\PYGZsh{} Plane wave cutoff energy in eV}
+                     \PYG{n}{calculation}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{scf}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{c+c1}{\PYGZsh{} Self\PYGZhy{}consistent field calculation}
+                     \PYG{n}{kpts}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{,} \PYG{c+c1}{\PYGZsh{} Monkhorst\PYGZhy{}Pack k\PYGZhy{}point mesh}
+                     \PYG{n}{xc}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{PBE}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}     \PYG{c+c1}{\PYGZsh{} Exchange\PYGZhy{}correlation functional (PBE for Perdew\PYGZhy{}Burke\PYGZhy{}Ernzerhof)}
+                     \PYG{n}{outdir}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{gaas\PYGZus{}calculation}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{c+c1}{\PYGZsh{} Output directory for Quantum ESPRESSO}
+                     \PYG{n}{pseudo\PYGZus{}dir}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{pseudo}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}  \PYG{c+c1}{\PYGZsh{} Directory containing pseudopotential files}
+                     \PYG{n}{pseudopotentials}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Ga}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Ga.pbe\PYGZhy{}n\PYGZhy{}kjpaw.UPF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{As}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{As.pbe\PYGZhy{}n\PYGZhy{}kjpaw.UPF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{\PYGZcb{}} \PYG{c+c1}{\PYGZsh{} Pseudopotentials for elements}
+                     \PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Attach the calculator to the GaAs structure}
+\PYG{n}{gaas}\PYG{o}{.}\PYG{n}{set\PYGZus{}calculator}\PYG{p}{(}\PYG{n}{gaas\PYGZus{}calc}\PYG{p}{)}
+\end{sphinxVerbatim}
+\end{quote}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Repeat the above steps to create calculators for Si and Al with appropriate pseudopotential files.
+
+\end{itemize}
+
+\end{enumerate}
+
+
+\section{Running Quantum ESPRESSO Calculations}
+\label{\detokenize{qease/qease:running-quantum-espresso-calculations}}
+\sphinxAtStartPar
+Now that we have set up the Quantum ESPRESSO calculators, let’s run the electronic structure calculations for GaAs, Si, and Al.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Calculate the potential energy of GaAs
+\sphinxhyphen{} Use the \(get_potential_energy()\) method of the \(Atoms\) object to perform the calculation:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{gaas\PYGZus{}energy} \PYG{o}{=} \PYG{n}{gaas}\PYG{o}{.}\PYG{n}{get\PYGZus{}potential\PYGZus{}energy}\PYG{p}{(}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{GaAs total energy:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{gaas\PYGZus{}energy}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{eV}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+\end{quote}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Repeat the above step for Si and Al.
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+Accessing Additional Results
+\sphinxhyphen{} ASE allows us to extract additional results from the Quantum ESPRESSO calculations, such as forces, stress tensor, and electronic structure information.
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+Students are encouraged to explore the ASE documentation to learn how to extract and analyze additional information from Quantum ESPRESSO calculations.
+\end{sphinxadmonition}
+
+\end{enumerate}
+
+
+\section{Density of States}
+\label{\detokenize{qease/qease:density-of-states}}
+\sphinxAtStartPar
+The density of states (DOS) is a fundamental concept in condensed matter physics and quantum mechanics. It provides valuable insights into the distribution of energy levels available to electrons in a material. The DOS is defined mathematically as:
+\begin{equation*}
+\begin{split}g(\varepsilon) = \sum\limits_n \langle\psi_n|\psi_n\rangle \delta(\varepsilon-\varepsilon_n),\end{split}
+\end{equation*}
+\sphinxAtStartPar
+where \(\varepsilon_n\) represents the eigenvalue of the eigenstate \(|\psi_n\rangle\).
+
+\sphinxAtStartPar
+In a given orthonormal basis, the DOS can be expressed as a sum over basis functions:
+\begin{equation*}
+\begin{split}\begin{align*}
+g(\varepsilon) &= \sum\limits_i g_i(\varepsilon), \\
+g_i(\varepsilon) &= \sum\limits_n \langle \psi_n | i \rangle \langle i | \psi_n \rangle \delta(\varepsilon - \varepsilon_n),
+\end{align*}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+where \(g_i(\varepsilon)\) is called the \sphinxstyleemphasis{projected density of states} (PDOS). Additionally, the DOS can also be represented as an integral over the spatial coordinates:
+\begin{equation*}
+\begin{split}\begin{align*}
+g(\varepsilon) &= \int\!\mathrm{d}r g(r, \varepsilon), \\
+g(r, \varepsilon) &= \sum\limits_n \langle\psi_n | r \rangle \langle r | \psi_n \rangle \delta(\varepsilon - \varepsilon_n),
+\end{align*}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+where \(g(r, \varepsilon)\) is known as the \sphinxstyleemphasis{local density of states} (LDOS).
+
+\sphinxAtStartPar
+It is important to note that the completeness of the selected basis sets is crucial in defining the DOS. We have \(1 = \sum\limits_i | i \rangle\langle i |\) for discrete basis sets and \(1 =\int\!\mathrm{d}r |r\rangle\langle r|\) for continuous basis sets.
+
+\sphinxAtStartPar
+The DOS has several important properties that make it a valuable tool for understanding electronic structure:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Total Number of Electrons (N):} The integral of DOS below the Fermi energy gives the total number of electrons (N) in the system:
+\begin{equation*}
+\begin{split}\int\!\mathrm{d}\varepsilon\, n_F(\varepsilon) g(\varepsilon) = N,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+where \(n_F(\varepsilon)\) is the Fermi distribution function.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Electron Density (n(r)):} The integral of LDOS multiplied by the Fermi distribution provides the electron density at a given point in space (r):
+\begin{equation*}
+\begin{split}\int\!\mathrm{d}\varepsilon\, n_F(\varepsilon) g(r, \varepsilon) = n(r).\end{split}
+\end{equation*}
+\end{enumerate}
+
+\sphinxAtStartPar
+The DOS is a powerful tool in solid\sphinxhyphen{}state physics and materials science for understanding the electronic properties of materials and predicting their behavior under different conditions.
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+In the above definition, the k\sphinxhyphen{}dependence of eigenfunctions has been dropped for simplicity. For a more accurate definition, one can refer to “\sphinxstyleemphasis{Quantum Chemistry of Solids: The LCAO First Principles Treatment of Crystals}” by Robert A. Evarestov.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+To summarize, the DOS provides crucial information about the distribution of energy levels and electronic states in a material, making it a fundamental concept in the study of condensed matter and quantum systems.
+
+\sphinxstepscope
+
+
+\chapter{NWChem Calculations with ASE}
+\label{\detokenize{nwase/nwase:nwchem-calculations-with-ase}}\label{\detokenize{nwase/nwase::doc}}
+
+
+\sphinxAtStartPar
+Welcome to the course on “Running NWChem Calculations and Analyzing Molecular Orbitals and Charge Density” using the Atomic Simulation Environment (ASE). In this course, you will learn how to perform quantum chemical calculations with NWChem and extract molecular orbitals and charge density using ASE.
+
+
+\section{Prerequisites}
+\label{\detokenize{nwase/nwase:prerequisites}}
+\sphinxAtStartPar
+Before starting this course, make sure you have the following installed on your system:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Python with pip (to install ASE).
+
+\item {} 
+\sphinxAtStartPar
+NWChem (installed separately from the ASE).
+
+\end{enumerate}
+
+
+\section{Downloading Amino Acid Structures from PDB}
+\label{\detokenize{nwase/nwase:downloading-amino-acid-structures-from-pdb}}
+\sphinxAtStartPar
+In this section, we will download the structures of amino acids from the Protein Data Bank (PDB) and read them using ASE.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Install ASE
+\sphinxhyphen{} You can install ASE using pip with the following command:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+pip\PYG{+w}{ }install\PYG{+w}{ }ase
+\end{sphinxVerbatim}
+\end{quote}
+
+\item {} 
+\sphinxAtStartPar
+Import ASE modules
+\sphinxhyphen{} Import the necessary ASE modules to work with molecular structures:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{ase}\PYG{n+nn}{.}\PYG{n+nn}{io} \PYG{k+kn}{import} \PYG{n}{read}
+\end{sphinxVerbatim}
+\end{quote}
+
+\item {} 
+\sphinxAtStartPar
+Download PDB files
+\sphinxhyphen{} Download the PDB files for amino acids from the Protein Data Bank (\sphinxurl{https://www.rcsb.org/}).
+\sphinxhyphen{} Save the PDB files in your working directory.
+
+\item {} 
+\sphinxAtStartPar
+Read PDB files
+\sphinxhyphen{} Use the \(read\) function from ASE to read the PDB files and create ASE \(Atoms\) objects:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{amino\PYGZus{}acid1} \PYG{o}{=} \PYG{n}{read}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{amino\PYGZus{}acid1.pdb}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{amino\PYGZus{}acid2} \PYG{o}{=} \PYG{n}{read}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{amino\PYGZus{}acid2.pdb}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Add more amino acids as needed}
+\end{sphinxVerbatim}
+\end{quote}
+
+\end{enumerate}
+
+
+\section{Creating NWChem Calculator in ASE}
+\label{\detokenize{nwase/nwase:creating-nwchem-calculator-in-ase}}
+\sphinxAtStartPar
+Now that we have our amino acid structures loaded as \(Atoms\) objects, we will create NWChem calculators to perform quantum chemical calculations.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Import NWChem calculator
+\sphinxhyphen{} Import the \(Nwchem\) calculator from ASE to interface with NWChem:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{ase}\PYG{n+nn}{.}\PYG{n+nn}{calculators}\PYG{n+nn}{.}\PYG{n+nn}{nwchem} \PYG{k+kn}{import} \PYG{n}{Nwchem}
+\end{sphinxVerbatim}
+\end{quote}
+
+\item {} 
+\sphinxAtStartPar
+Set up NWChem calculator
+\sphinxhyphen{} Create an NWChem calculator for the first amino acid:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Set up the NWChem calculator for amino acid1}
+\PYG{n}{amino\PYGZus{}acid1\PYGZus{}calc} \PYG{o}{=} \PYG{n}{Nwchem}\PYG{p}{(}
+    \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{amino\PYGZus{}acid1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{c+c1}{\PYGZsh{} Calculation label}
+    \PYG{n}{task}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{scf}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}          \PYG{c+c1}{\PYGZsh{} Self\PYGZhy{}consistent field calculation}
+    \PYG{n}{basis}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{6\PYGZhy{}31G}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}       \PYG{c+c1}{\PYGZsh{} Basis set (6\PYGZhy{}31G for a balanced compromise between accuracy and efficiency)}
+    \PYG{n}{charge}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,}            \PYG{c+c1}{\PYGZsh{} Charge of the system (0 for neutral amino acid)}
+    \PYG{n}{multiplicity}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,}      \PYG{c+c1}{\PYGZsh{} Multiplicity of the system (1 for singlet)}
+    \PYG{n}{xc}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{B3LYP}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}          \PYG{c+c1}{\PYGZsh{} Exchange\PYGZhy{}correlation functional (B3LYP for good accuracy in molecular properties)}
+    \PYG{n}{coordinates}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{amino\PYGZus{}acid1.xyz}\PYG{l+s+s1}{\PYGZsq{}} \PYG{c+c1}{\PYGZsh{} XYZ file with atomic coordinates}
+\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Attach the calculator to the amino acid1 structure}
+\PYG{n}{amino\PYGZus{}acid1}\PYG{o}{.}\PYG{n}{set\PYGZus{}calculator}\PYG{p}{(}\PYG{n}{amino\PYGZus{}acid1\PYGZus{}calc}\PYG{p}{)}
+\end{sphinxVerbatim}
+\end{quote}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Repeat the above steps to create calculators for other amino acids with appropriate basis sets and parameters.
+
+\end{itemize}
+
+\end{enumerate}
+
+
+\section{Running NWChem Calculations}
+\label{\detokenize{nwase/nwase:running-nwchem-calculations}}
+\sphinxAtStartPar
+Now that we have set up the NWChem calculators, let’s run the quantum chemical calculations for the amino acids.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Calculate the potential energy of amino acid1
+\sphinxhyphen{} Use the \(get_potential_energy()\) method of the \(Atoms\) object to perform the calculation:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{aa1\PYGZus{}energy} \PYG{o}{=} \PYG{n}{amino\PYGZus{}acid1}\PYG{o}{.}\PYG{n}{get\PYGZus{}potential\PYGZus{}energy}\PYG{p}{(}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Amino Acid 1 total energy:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{aa1\PYGZus{}energy}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{eV}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+\end{quote}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Repeat the above step for other amino acids.
+
+\end{itemize}
+
+\end{enumerate}
+
+
+\section{Analyzing Molecular Orbitals and Charge Density}
+\label{\detokenize{nwase/nwase:analyzing-molecular-orbitals-and-charge-density}}
+\sphinxAtStartPar
+ASE allows us to extract molecular orbitals and charge density from NWChem calculations.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Access molecular orbitals
+\sphinxhyphen{} Use the \(get_molecular_orbitals()\) method of the \(Atoms\) object to obtain molecular orbital information:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Get molecular orbitals for amino acid1}
+\PYG{n}{mo\PYGZus{}coefficients}\PYG{p}{,} \PYG{n}{mo\PYGZus{}energies}\PYG{p}{,} \PYG{n}{mo\PYGZus{}occ} \PYG{o}{=} \PYG{n}{amino\PYGZus{}acid1}\PYG{o}{.}\PYG{n}{get\PYGZus{}molecular\PYGZus{}orbitals}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Print molecular orbital energies for amino acid1}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Molecular Orbital Energies for Amino Acid 1:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{mo\PYGZus{}energies}\PYG{p}{)}
+\end{sphinxVerbatim}
+\end{quote}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Repeat the above step for other amino acids.
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+Access charge density
+\sphinxhyphen{} Use the \(get_atomic_numbers()\) and \(get_atomic_spins()\) methods to extract atomic numbers and spins for the system:
+\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Get atomic numbers and spins for amino acid1}
+\PYG{n}{atomic\PYGZus{}numbers} \PYG{o}{=} \PYG{n}{amino\PYGZus{}acid1}\PYG{o}{.}\PYG{n}{get\PYGZus{}atomic\PYGZus{}numbers}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{atomic\PYGZus{}spins} \PYG{o}{=} \PYG{n}{amino\PYGZus{}acid1}\PYG{o}{.}\PYG{n}{get\PYGZus{}atomic\PYGZus{}spins}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+\end{quote}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Use the above information to extract and analyze the charge density from the NWChem calculation results.
+
+\end{itemize}
+
+\end{enumerate}
+
+
+\section{Conclusion}
+\label{\detokenize{nwase/nwase:conclusion}}
+\sphinxAtStartPar
+Congratulations! You have completed the course on “Running NWChem Calculations and Analyzing Molecular Orbitals and Charge Density” using ASE. You have learned how to set up NWChem calculators in ASE, perform quantum chemical calculations for amino acids, and extract molecular orbital and charge density information from the calculations.
+
+\sphinxAtStartPar
+Continue your exploration of computational chemistry and materials science with NWChem and ASE. Apply the knowledge gained in this course to study more complex molecular systems, perform electronic structure calculations, and analyze molecular properties. Happy computational chemistry with NWChem and ASE!
 
 
 \chapter{Indices and tables}

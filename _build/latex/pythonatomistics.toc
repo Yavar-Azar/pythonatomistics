@@ -23,22 +23,43 @@
 \contentsline {section}{\numberline {3.6}NumPy Basics}{7}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Introduction to Matplotlib}{7}{section.3.7}%
 \contentsline {section}{\numberline {3.8}Conclusion}{8}{section.3.8}%
-\contentsline {chapter}{\numberline {4}ASE BASICS}{9}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Section Three: ASE Basic Concepts}{9}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Part 1: Graphical Interface with ASE}{9}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Step 1: Launching ASE’s GUI}{9}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Step 2: Basic Visualization and Manipulation}{9}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Step 3: Periodic Models and Reciprocal Lattice}{10}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Step 4: Building Nanostructures and Nanotubes}{10}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Part 2: Command Line Interface with ASE}{10}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Step 1: Terminal or IPython Setup}{10}{section.4.8}%
-\contentsline {section}{\numberline {4.9}Step 2: Creating Atomic Structures with the Atoms Object}{11}{section.4.9}%
-\contentsline {section}{\numberline {4.10}Step 3: Reading and Writing Atomic Structure Files}{11}{section.4.10}%
-\contentsline {section}{\numberline {4.11}Step 4: Using Calculators for Energy Calculations}{11}{section.4.11}%
-\contentsline {section}{\numberline {4.12}Step 5: Creating Supercells and Applying Transformations}{12}{section.4.12}%
-\contentsline {chapter}{\numberline {5}Density Functional Theory (DFT)}{13}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introduction to Density Functional Theory (DFT)}{13}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Exchange\sphinxhyphen {}Correlation Functionals in DFT}{13}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Solving Kohn\sphinxhyphen {}Sham Equations with Different Basis Sets}{14}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Conclusion}{14}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Indices and tables}{15}{chapter.6}%
+\contentsline {chapter}{\numberline {4}Basics of Crystallography}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Crystal Structure}{9}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Unit Cell and Lattice}{9}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Lattice Planes and Directions}{10}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Reciprocal Lattice}{10}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Crystal Symmetry and Space Groups}{11}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Additional Resources}{11}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Example}{11}{section.4.7}%
+\contentsline {chapter}{\numberline {5}ASE BASICS}{13}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Section Three: ASE Basic Concepts}{13}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Part 1: Graphical Interface with ASE}{13}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Step 1: Launching ASE’s GUI}{13}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Step 2: Basic Visualization and Manipulation}{13}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Step 3: Periodic Models and Reciprocal Lattice}{14}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Step 4: Building Nanostructures and Nanotubes}{14}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Part 2: Command Line Interface with ASE}{14}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Step 1: Terminal or IPython Setup}{14}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Step 2: Creating Atomic Structures with the Atoms Object}{15}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Step 3: Reading and Writing Atomic Structure Files}{15}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Step 4: Using Calculators for Energy Calculations}{15}{section.5.11}%
+\contentsline {section}{\numberline {5.12}Step 5: Creating Supercells and Applying Transformations}{16}{section.5.12}%
+\contentsline {chapter}{\numberline {6}Density Functional Theory (DFT)}{17}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduction to Density Functional Theory (DFT)}{17}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Exchange\sphinxhyphen {}Correlation Functionals in DFT}{17}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Solving Kohn\sphinxhyphen {}Sham Equations with Different Basis Sets}{18}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Conclusion}{18}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Quantum ESPRESSO Calculations}{19}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Prerequisites}{19}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Downloading Crystal Structures from Materials Project}{19}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Creating Quantum ESPRESSO Calculator in ASE}{20}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Running Quantum ESPRESSO Calculations}{20}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Density of States}{21}{section.7.5}%
+\contentsline {chapter}{\numberline {8}NWChem Calculations with ASE}{23}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Prerequisites}{23}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Downloading Amino Acid Structures from PDB}{23}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Creating NWChem Calculator in ASE}{24}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Running NWChem Calculations}{24}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Analyzing Molecular Orbitals and Charge Density}{24}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Conclusion}{25}{section.8.6}%
+\contentsline {chapter}{\numberline {9}Indices and tables}{27}{chapter.9}%

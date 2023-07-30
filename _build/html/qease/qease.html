@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantum ESPRESSO Calculations &mdash; pythonatomistics 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script>window.MathJax = {"tex": {"macros": {"br": "{\\mathbf r}", "bk": "{\\mathbf k}", "bG": "{\\mathbf G}"}}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NWChem Calculations with ASE" href="../nwase/nwase.html" />
+    <link rel="prev" title="Density Functional Theory (DFT)" href="../dft/dft.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pythonatomistics
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vbox/vbox.html">Installing Ubuntu on VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/basics.html">Python for Atomistic Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asebasics/asebasics.html">ASE BASICS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dft/dft.html">Density Functional Theory (DFT)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quantum ESPRESSO Calculations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-crystal-structures-from-materials-project">Downloading Crystal Structures from Materials Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-quantum-espresso-calculator-in-ase">Creating Quantum ESPRESSO Calculator in ASE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-quantum-espresso-calculations">Running Quantum ESPRESSO Calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#density-of-states">Density of States</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../nwase/nwase.html">NWChem Calculations with ASE</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pythonatomistics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Quantum ESPRESSO Calculations</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/qease/qease.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quantum-espresso-calculations">
+<h1>Quantum ESPRESSO Calculations<a class="headerlink" href="#quantum-espresso-calculations" title="Permalink to this heading"></a></h1>
+<h2 style="text-align: center;">Course Material</h2><p>Welcome to the course on “Introduction to Quantum ESPRESSO Calculations and Materials Simulation” using the Atomic Simulation Environment (ASE). In this course, you will learn the basics of quantum mechanical calculations using the Quantum ESPRESSO software package and how to perform materials simulations with ASE.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
+<p>Before starting this course, make sure you have the following installed on your system:</p>
+<ol class="arabic simple">
+<li><p>Python with pip (to install ASE).</p></li>
+<li><p>Quantum ESPRESSO (installed separately from the ASE).</p></li>
+</ol>
+</section>
+<section id="downloading-crystal-structures-from-materials-project">
+<h2>Downloading Crystal Structures from Materials Project<a class="headerlink" href="#downloading-crystal-structures-from-materials-project" title="Permalink to this heading"></a></h2>
+<p>In this section, we will download crystal structures of GaAs, Si, and Al from the Materials Project database and read them using ASE.</p>
+<ol class="arabic">
+<li><p>Install ASE
+- You can install ASE using pip with the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>ase
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Import ASE modules
+- Import the necessary ASE modules to work with crystal structures:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Download CIF files
+- Download the CIF files for GaAs, Si, and Al from the Materials Project website (<a class="reference external" href="https://materialsproject.org/">https://materialsproject.org/</a>).
+- Save the CIF files in your working directory.</p></li>
+<li><p>Read CIF files
+- Use the <span class="math notranslate nohighlight">\(read\)</span> function from ASE to read the CIF files and create ASE <span class="math notranslate nohighlight">\(Atoms\)</span> objects:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gaas</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;gaas.cif&#39;</span><span class="p">)</span>
+<span class="n">si</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;si.cif&#39;</span><span class="p">)</span>
+<span class="n">al</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;al.cif&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="creating-quantum-espresso-calculator-in-ase">
+<h2>Creating Quantum ESPRESSO Calculator in ASE<a class="headerlink" href="#creating-quantum-espresso-calculator-in-ase" title="Permalink to this heading"></a></h2>
+<p>Now that we have our crystal structures loaded as <span class="math notranslate nohighlight">\(Atoms\)</span> objects, we will create Quantum ESPRESSO calculators to perform electronic structure calculations.</p>
+<ol class="arabic">
+<li><p>Import Quantum ESPRESSO calculator
+- Import the <span class="math notranslate nohighlight">\(Espresso\)</span> calculator from ASE to interface with Quantum ESPRESSO:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.calculators.espresso</span> <span class="kn">import</span> <span class="n">Espresso</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Set up Quantum ESPRESSO calculator
+- Create a Quantum ESPRESSO calculator for GaAs:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up the Quantum ESPRESSO calculator for GaAs</span>
+<span class="n">gaas_calc</span> <span class="o">=</span> <span class="n">Espresso</span><span class="p">(</span><span class="n">pw</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>       <span class="c1"># Plane wave cutoff energy in eV</span>
+                     <span class="n">calculation</span><span class="o">=</span><span class="s1">&#39;scf&#39;</span><span class="p">,</span> <span class="c1"># Self-consistent field calculation</span>
+                     <span class="n">kpts</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="c1"># Monkhorst-Pack k-point mesh</span>
+                     <span class="n">xc</span><span class="o">=</span><span class="s1">&#39;PBE&#39;</span><span class="p">,</span>     <span class="c1"># Exchange-correlation functional (PBE for Perdew-Burke-Ernzerhof)</span>
+                     <span class="n">outdir</span><span class="o">=</span><span class="s1">&#39;gaas_calculation&#39;</span><span class="p">,</span> <span class="c1"># Output directory for Quantum ESPRESSO</span>
+                     <span class="n">pseudo_dir</span><span class="o">=</span><span class="s1">&#39;pseudo&#39;</span><span class="p">,</span>  <span class="c1"># Directory containing pseudopotential files</span>
+                     <span class="n">pseudopotentials</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Ga&#39;</span><span class="p">:</span> <span class="s1">&#39;Ga.pbe-n-kjpaw.UPF&#39;</span><span class="p">,</span> <span class="s1">&#39;As&#39;</span><span class="p">:</span> <span class="s1">&#39;As.pbe-n-kjpaw.UPF&#39;</span><span class="p">}</span> <span class="c1"># Pseudopotentials for elements</span>
+                     <span class="p">)</span>
+
+<span class="c1"># Attach the calculator to the GaAs structure</span>
+<span class="n">gaas</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">gaas_calc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Repeat the above steps to create calculators for Si and Al with appropriate pseudopotential files.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="running-quantum-espresso-calculations">
+<h2>Running Quantum ESPRESSO Calculations<a class="headerlink" href="#running-quantum-espresso-calculations" title="Permalink to this heading"></a></h2>
+<p>Now that we have set up the Quantum ESPRESSO calculators, let’s run the electronic structure calculations for GaAs, Si, and Al.</p>
+<ol class="arabic">
+<li><p>Calculate the potential energy of GaAs
+- Use the <span class="math notranslate nohighlight">\(get_potential_energy()\)</span> method of the <span class="math notranslate nohighlight">\(Atoms\)</span> object to perform the calculation:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gaas_energy</span> <span class="o">=</span> <span class="n">gaas</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GaAs total energy:&#39;</span><span class="p">,</span> <span class="n">gaas_energy</span><span class="p">,</span> <span class="s1">&#39;eV&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Repeat the above step for Si and Al.</p></li>
+</ul>
+</li>
+<li><p>Accessing Additional Results
+- ASE allows us to extract additional results from the Quantum ESPRESSO calculations, such as forces, stress tensor, and electronic structure information.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Students are encouraged to explore the ASE documentation to learn how to extract and analyze additional information from Quantum ESPRESSO calculations.</p>
+</div>
+</li>
+</ol>
+</section>
+<section id="density-of-states">
+<h2>Density of States<a class="headerlink" href="#density-of-states" title="Permalink to this heading"></a></h2>
+<p>The density of states (DOS) is a fundamental concept in condensed matter physics and quantum mechanics. It provides valuable insights into the distribution of energy levels available to electrons in a material. The DOS is defined mathematically as:</p>
+<div class="math notranslate nohighlight">
+\[g(\varepsilon) = \sum\limits_n \langle\psi_n|\psi_n\rangle \delta(\varepsilon-\varepsilon_n),\]</div>
+<p>where <span class="math notranslate nohighlight">\(\varepsilon_n\)</span> represents the eigenvalue of the eigenstate <span class="math notranslate nohighlight">\(|\psi_n\rangle\)</span>.</p>
+<p>In a given orthonormal basis, the DOS can be expressed as a sum over basis functions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+g(\varepsilon) &amp;= \sum\limits_i g_i(\varepsilon), \\
+g_i(\varepsilon) &amp;= \sum\limits_n \langle \psi_n | i \rangle \langle i | \psi_n \rangle \delta(\varepsilon - \varepsilon_n),
+\end{align*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(g_i(\varepsilon)\)</span> is called the <em>projected density of states</em> (PDOS). Additionally, the DOS can also be represented as an integral over the spatial coordinates:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+g(\varepsilon) &amp;= \int\!\mathrm{d}r g(r, \varepsilon), \\
+g(r, \varepsilon) &amp;= \sum\limits_n \langle\psi_n | r \rangle \langle r | \psi_n \rangle \delta(\varepsilon - \varepsilon_n),
+\end{align*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(g(r, \varepsilon)\)</span> is known as the <em>local density of states</em> (LDOS).</p>
+<p>It is important to note that the completeness of the selected basis sets is crucial in defining the DOS. We have <span class="math notranslate nohighlight">\(1 = \sum\limits_i | i \rangle\langle i |\)</span> for discrete basis sets and <span class="math notranslate nohighlight">\(1 =\int\!\mathrm{d}r |r\rangle\langle r|\)</span> for continuous basis sets.</p>
+<p>The DOS has several important properties that make it a valuable tool for understanding electronic structure:</p>
+<ol class="arabic">
+<li><p><strong>Total Number of Electrons (N):</strong> The integral of DOS below the Fermi energy gives the total number of electrons (N) in the system:</p>
+<div class="math notranslate nohighlight">
+\[\int\!\mathrm{d}\varepsilon\, n_F(\varepsilon) g(\varepsilon) = N,\]</div>
+<p>where <span class="math notranslate nohighlight">\(n_F(\varepsilon)\)</span> is the Fermi distribution function.</p>
+</li>
+<li><p><strong>Electron Density (n(r)):</strong> The integral of LDOS multiplied by the Fermi distribution provides the electron density at a given point in space (r):</p>
+<div class="math notranslate nohighlight">
+\[\int\!\mathrm{d}\varepsilon\, n_F(\varepsilon) g(r, \varepsilon) = n(r).\]</div>
+</li>
+</ol>
+<p>The DOS is a powerful tool in solid-state physics and materials science for understanding the electronic properties of materials and predicting their behavior under different conditions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the above definition, the k-dependence of eigenfunctions has been dropped for simplicity. For a more accurate definition, one can refer to “<em>Quantum Chemistry of Solids: The LCAO First Principles Treatment of Crystals</em>” by Robert A. Evarestov.</p>
+</div>
+<p>To summarize, the DOS provides crucial information about the distribution of energy levels and electronic states in a material, making it a fundamental concept in the study of condensed matter and quantum systems.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../dft/dft.html" class="btn btn-neutral float-left" title="Density Functional Theory (DFT)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../nwase/nwase.html" class="btn btn-neutral float-right" title="NWChem Calculations with ASE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Yavar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

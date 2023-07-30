@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basics of Crystallography &mdash; pythonatomistics 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script>window.MathJax = {"tex": {"macros": {"br": "{\\mathbf r}", "bk": "{\\mathbf k}", "bG": "{\\mathbf G}"}}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ASE BASICS" href="../asebasics/asebasics.html" />
+    <link rel="prev" title="Python for Atomistic Simulation" href="../basics/basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pythonatomistics
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vbox/vbox.html">Installing Ubuntu on VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/basics.html">Python for Atomistic Simulation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basics of Crystallography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#crystal-structure">Crystal Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unit-cell-and-lattice">Unit Cell and Lattice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lattice-planes-and-directions">Lattice Planes and Directions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reciprocal-lattice">Reciprocal Lattice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crystal-symmetry-and-space-groups">Crystal Symmetry and Space Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-resources">Additional Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../asebasics/asebasics.html">ASE BASICS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dft/dft.html">Density Functional Theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qease/qease.html">Quantum ESPRESSO Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nwase/nwase.html">NWChem Calculations with ASE</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pythonatomistics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Basics of Crystallography</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/crystal/crystal.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="basics-of-crystallography">
+<h1>Basics of Crystallography<a class="headerlink" href="#basics-of-crystallography" title="Permalink to this heading"></a></h1>
+<p>Before delving into ab-initio calculations with solid-state packages, it is essential to review some fundamental concepts in solid-state physics.</p>
+<section id="crystal-structure">
+<h2>Crystal Structure<a class="headerlink" href="#crystal-structure" title="Permalink to this heading"></a></h2>
+<p>In crystallography, the <em>crystal structure</em> refers to the ordered arrangement of atoms, ions, or molecules in a crystalline material. These ordered structures arise from the intrinsic nature of the constituent particles, forming symmetric patterns that repeat along the principal directions in three-dimensional space.</p>
+</section>
+<section id="unit-cell-and-lattice">
+<h2>Unit Cell and Lattice<a class="headerlink" href="#unit-cell-and-lattice" title="Permalink to this heading"></a></h2>
+<p>The smallest group of particles in the material that constitutes this repeating pattern is known as the <em>unit cell</em>. It fully reflects the symmetry and structure of the entire crystal, resulting from the repetitive translation of the unit cell along its principal axes. The translation vectors define the nodes of the <em>Bravais lattice</em>, an imaginary concept.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Basis.jpg"><img alt="../_images/Basis.jpg" src="../_images/Basis.jpg" style="width: 220px;" /></a>
+</figure>
+<p>The crystal structure is formed when the group of atoms or molecules is arranged identically at the lattice points. This group of atoms or molecules is called the <em>basis</em>.</p>
+</section>
+<section id="lattice-planes-and-directions">
+<h2>Lattice Planes and Directions<a class="headerlink" href="#lattice-planes-and-directions" title="Permalink to this heading"></a></h2>
+<p>The notation system of <em>Miller indices</em> represents planes in crystal (Bravais) lattices. A family of lattice planes is determined by three integers h, k, and l, which are the Miller indices.</p>
+<figure class="align-center">
+<img alt="../_images/latticeplane.jpeg" src="../_images/latticeplane.jpeg" />
+</figure>
+</section>
+<section id="reciprocal-lattice">
+<h2>Reciprocal Lattice<a class="headerlink" href="#reciprocal-lattice" title="Permalink to this heading"></a></h2>
+<p>In addition to the direct lattice in ordinary space, it is crucial to consider the <em>reciprocal lattice</em> in dual (or reciprocal) space when studying crystals. The reciprocal lattice is defined by three primitive vectors <span class="math notranslate nohighlight">\(\vec{g_1}\)</span>, <span class="math notranslate nohighlight">\(\vec{g_2}\)</span>, and <span class="math notranslate nohighlight">\(\vec{g_3}\)</span>.</p>
+<p>The <em>Brillouin zone</em> is a uniquely defined primitive cell in reciprocal space.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/BZ.png"><img alt="../_images/BZ.png" src="../_images/BZ.png" style="width: 200px;" /></a>
+</figure>
+</section>
+<section id="crystal-symmetry-and-space-groups">
+<h2>Crystal Symmetry and Space Groups<a class="headerlink" href="#crystal-symmetry-and-space-groups" title="Permalink to this heading"></a></h2>
+<p>The space groups in three dimensions are formed from combinations of the 32 crystallographic point groups with the 14 Bravais lattices, each belonging to one of the 7 lattice systems.</p>
+</section>
+<section id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading"></a></h2>
+<p>To explore and analyze problems of structural and mathematical crystallography, solid-state physics, and structural chemistry, the <a class="reference external" href="https://www.cryst.ehu.es/">Bilbao Crystallographic Server</a> offers an open-access website with an online crystallographic database and programs.</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<p>Open a CIF (<span class="file">./CsPbI3.cif</span>) file and find the lattice constants and basis vectors.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../basics/basics.html" class="btn btn-neutral float-left" title="Python for Atomistic Simulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../asebasics/asebasics.html" class="btn btn-neutral float-right" title="ASE BASICS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Yavar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

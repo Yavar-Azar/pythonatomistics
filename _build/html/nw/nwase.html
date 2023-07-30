@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Running NWChem Calculations and Analyzing Molecular Orbitals and Charge Density with ASE &mdash; pythonatomistics 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script>window.MathJax = {"tex": {"macros": {"br": "{\\mathbf r}", "bk": "{\\mathbf k}", "bG": "{\\mathbf G}"}}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pythonatomistics
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vbox/vbox.html">Installing Ubuntu on VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/basics.html">Python for Atomistic Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asebasics/asebasics.html">ASE BASICS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dft/dft.html">Density Functional Theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qease/qease.html">Quantum ESPRESSO Calculations</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pythonatomistics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Running NWChem Calculations and Analyzing Molecular Orbitals and Charge Density with ASE</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/nw/nwase.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="running-nwchem-calculations-and-analyzing-molecular-orbitals-and-charge-density-with-ase">
+<h1>Running NWChem Calculations and Analyzing Molecular Orbitals and Charge Density with ASE<a class="headerlink" href="#running-nwchem-calculations-and-analyzing-molecular-orbitals-and-charge-density-with-ase" title="Permalink to this heading"></a></h1>
+<h2 style="text-align: center;">Course Material</h2><p>Welcome to the course on “Running NWChem Calculations and Analyzing Molecular Orbitals and Charge Density” using the Atomic Simulation Environment (ASE). In this course, you will learn how to perform quantum chemical calculations with NWChem and extract molecular orbitals and charge density using ASE.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
+<p>Before starting this course, make sure you have the following installed on your system:</p>
+<ol class="arabic simple">
+<li><p>Python with pip (to install ASE).</p></li>
+<li><p>NWChem (installed separately from the ASE).</p></li>
+</ol>
+</section>
+<section id="downloading-amino-acid-structures-from-pdb">
+<h2>Downloading Amino Acid Structures from PDB<a class="headerlink" href="#downloading-amino-acid-structures-from-pdb" title="Permalink to this heading"></a></h2>
+<p>In this section, we will download the structures of amino acids from the Protein Data Bank (PDB) and read them using ASE.</p>
+<ol class="arabic">
+<li><p>Install ASE
+- You can install ASE using pip with the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>ase
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Import ASE modules
+- Import the necessary ASE modules to work with molecular structures:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Download PDB files
+- Download the PDB files for amino acids from the Protein Data Bank (<a class="reference external" href="https://www.rcsb.org/">https://www.rcsb.org/</a>).
+- Save the PDB files in your working directory.</p></li>
+<li><p>Read PDB files
+- Use the <span class="math notranslate nohighlight">\(read\)</span> function from ASE to read the PDB files and create ASE <span class="math notranslate nohighlight">\(Atoms\)</span> objects:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">amino_acid1</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;amino_acid1.pdb&#39;</span><span class="p">)</span>
+<span class="n">amino_acid2</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;amino_acid2.pdb&#39;</span><span class="p">)</span>
+<span class="c1"># Add more amino acids as needed</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="creating-nwchem-calculator-in-ase">
+<h2>Creating NWChem Calculator in ASE<a class="headerlink" href="#creating-nwchem-calculator-in-ase" title="Permalink to this heading"></a></h2>
+<p>Now that we have our amino acid structures loaded as <span class="math notranslate nohighlight">\(Atoms\)</span> objects, we will create NWChem calculators to perform quantum chemical calculations.</p>
+<ol class="arabic">
+<li><p>Import NWChem calculator
+- Import the <span class="math notranslate nohighlight">\(Nwchem\)</span> calculator from ASE to interface with NWChem:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.calculators.nwchem</span> <span class="kn">import</span> <span class="n">Nwchem</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Set up NWChem calculator
+- Create an NWChem calculator for the first amino acid:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up the NWChem calculator for amino acid1</span>
+<span class="n">amino_acid1_calc</span> <span class="o">=</span> <span class="n">Nwchem</span><span class="p">(</span>
+    <span class="n">label</span><span class="o">=</span><span class="s1">&#39;amino_acid1&#39;</span><span class="p">,</span> <span class="c1"># Calculation label</span>
+    <span class="n">task</span><span class="o">=</span><span class="s1">&#39;scf&#39;</span><span class="p">,</span>          <span class="c1"># Self-consistent field calculation</span>
+    <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;6-31G&#39;</span><span class="p">,</span>       <span class="c1"># Basis set (6-31G for a balanced compromise between accuracy and efficiency)</span>
+    <span class="n">charge</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>            <span class="c1"># Charge of the system (0 for neutral amino acid)</span>
+    <span class="n">multiplicity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>      <span class="c1"># Multiplicity of the system (1 for singlet)</span>
+    <span class="n">xc</span><span class="o">=</span><span class="s1">&#39;B3LYP&#39;</span><span class="p">,</span>          <span class="c1"># Exchange-correlation functional (B3LYP for good accuracy in molecular properties)</span>
+    <span class="n">coordinates</span><span class="o">=</span><span class="s1">&#39;amino_acid1.xyz&#39;</span> <span class="c1"># XYZ file with atomic coordinates</span>
+<span class="p">)</span>
+
+<span class="c1"># Attach the calculator to the amino acid1 structure</span>
+<span class="n">amino_acid1</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">amino_acid1_calc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Repeat the above steps to create calculators for other amino acids with appropriate basis sets and parameters.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="running-nwchem-calculations">
+<h2>Running NWChem Calculations<a class="headerlink" href="#running-nwchem-calculations" title="Permalink to this heading"></a></h2>
+<p>Now that we have set up the NWChem calculators, let’s run the quantum chemical calculations for the amino acids.</p>
+<ol class="arabic">
+<li><p>Calculate the potential energy of amino acid1
+- Use the <span class="math notranslate nohighlight">\(get_potential_energy()\)</span> method of the <span class="math notranslate nohighlight">\(Atoms\)</span> object to perform the calculation:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">aa1_energy</span> <span class="o">=</span> <span class="n">amino_acid1</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Amino Acid 1 total energy:&#39;</span><span class="p">,</span> <span class="n">aa1_energy</span><span class="p">,</span> <span class="s1">&#39;eV&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Repeat the above step for other amino acids.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="analyzing-molecular-orbitals-and-charge-density">
+<h2>Analyzing Molecular Orbitals and Charge Density<a class="headerlink" href="#analyzing-molecular-orbitals-and-charge-density" title="Permalink to this heading"></a></h2>
+<p>ASE allows us to extract molecular orbitals and charge density from NWChem calculations.</p>
+<ol class="arabic">
+<li><p>Access molecular orbitals
+- Use the <span class="math notranslate nohighlight">\(get_molecular_orbitals()\)</span> method of the <span class="math notranslate nohighlight">\(Atoms\)</span> object to obtain molecular orbital information:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get molecular orbitals for amino acid1</span>
+<span class="n">mo_coefficients</span><span class="p">,</span> <span class="n">mo_energies</span><span class="p">,</span> <span class="n">mo_occ</span> <span class="o">=</span> <span class="n">amino_acid1</span><span class="o">.</span><span class="n">get_molecular_orbitals</span><span class="p">()</span>
+
+<span class="c1"># Print molecular orbital energies for amino acid1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Molecular Orbital Energies for Amino Acid 1:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo_energies</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Repeat the above step for other amino acids.</p></li>
+</ul>
+</li>
+<li><p>Access charge density
+- Use the <span class="math notranslate nohighlight">\(get_atomic_numbers()\)</span> and <span class="math notranslate nohighlight">\(get_atomic_spins()\)</span> methods to extract atomic numbers and spins for the system:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get atomic numbers and spins for amino acid1</span>
+<span class="n">atomic_numbers</span> <span class="o">=</span> <span class="n">amino_acid1</span><span class="o">.</span><span class="n">get_atomic_numbers</span><span class="p">()</span>
+<span class="n">atomic_spins</span> <span class="o">=</span> <span class="n">amino_acid1</span><span class="o">.</span><span class="n">get_atomic_spins</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Use the above information to extract and analyze the charge density from the NWChem calculation results.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading"></a></h2>
+<p>Congratulations! You have completed the course on “Running NWChem Calculations and Analyzing Molecular Orbitals and Charge Density” using ASE. You have learned how to set up NWChem calculators in ASE, perform quantum chemical calculations for amino acids, and extract molecular orbital and charge density information from the calculations.</p>
+<p>Continue your exploration of computational chemistry and materials science with NWChem and ASE. Apply the knowledge gained in this course to study more complex molecular systems, perform electronic structure calculations, and analyze molecular properties. Happy computational chemistry with NWChem and ASE!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Yavar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
