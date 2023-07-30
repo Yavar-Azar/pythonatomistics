@@ -9,7 +9,9 @@ First, let's set up a virtual environment using `virtualenv`. If you haven't ins
 
 .. code-block:: bash
 
-   pip install virtualenv
+    sudo apt install python3-pip
+    sudo apt install python3-tk
+    pip3 install virtualenv
 
 Once `virtualenv` is installed, let's create the virtual environment named "envase":
 
@@ -22,6 +24,8 @@ Next, activate the virtual environment (on macOS/Linux):
 .. code-block:: bash
 
    source envase/bin/activate
+   which python
+   which pip
 
 Installing ASE 
 -----------------------

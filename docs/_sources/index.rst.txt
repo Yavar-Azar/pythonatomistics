@@ -6,14 +6,15 @@
 Welcome to pythonatomistics's documentation!
 ============================================
 
-.. include:: introduction.rst
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents
 
+   introduction
    vbox/vbox
    basics/basics.rst
+   asebasics/asebasics
+   dft/dft
 
 
 

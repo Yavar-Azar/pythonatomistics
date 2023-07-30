@@ -64,7 +64,7 @@
 
 
 \title{pythonatomistics}
-\date{Jul 29, 2023}
+\date{Jul 30, 2023}
 \release{0.1.0}
 \author{Yavar}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -85,21 +85,23 @@
 \phantomsection\label{\detokenize{index::doc}}
 
 
+\sphinxstepscope
+
 
 \chapter{Introduction}
-\label{\detokenize{index:introduction}}
+\label{\detokenize{introduction:introduction}}\label{\detokenize{introduction::doc}}
 \sphinxAtStartPar
 Welcome to the “Python for Atomistic Simulation: Bridging Solid State and Quantum Chemistry” course!
 
 
 \section{Course Overview}
-\label{\detokenize{index:course-overview}}
+\label{\detokenize{introduction:course-overview}}
 \sphinxAtStartPar
 This course is designed to provide learners with a comprehensive understanding of performing atomistic simulations using Python. The course covers two essential domains: solid\sphinxhyphen{}state materials using Quantum Espresso and quantum chemistry calculations using NWChem. By the end of this course, you will gain hands\sphinxhyphen{}on experience in using the Atomic Simulation Environment (ASE) library to set up and analyze DFT calculations for both solid\sphinxhyphen{}state and quantum chemistry applications.
 
 
 \section{Course Objectives}
-\label{\detokenize{index:course-objectives}}\begin{itemize}
+\label{\detokenize{introduction:course-objectives}}\begin{itemize}
 \item {} 
 \sphinxAtStartPar
 Introduce the fundamental concepts of Density Functional Theory (DFT) and its relevance in atomistic simulations.
@@ -124,13 +126,13 @@ Introduce some advanced tools to generate descriptors for machine learning based
 
 
 \section{Who Should Take This Course?}
-\label{\detokenize{index:who-should-take-this-course}}
+\label{\detokenize{introduction:who-should-take-this-course}}
 \sphinxAtStartPar
 This course is suitable for individuals interested in computational chemistry, materials science, and anyone looking to expand their knowledge of DFT simulations using Python. Basic knowledge of Python programming is beneficial, but not mandatory, as we will cover the necessary Python concepts throughout the course.
 
 
 \section{Prerequisites}
-\label{\detokenize{index:prerequisites}}\begin{itemize}
+\label{\detokenize{introduction:prerequisites}}\begin{itemize}
 \item {} 
 \sphinxAtStartPar
 Basic understanding of Python programming (recommended, but not required).
@@ -152,16 +154,16 @@ The examples in this course are provided with code snippets and step\sphinxhyphe
 \sphinxstepscope
 
 
-\subsection{Installing Ubuntu on VirtualBox}
+\chapter{Installing Ubuntu on VirtualBox}
 \label{\detokenize{vbox/vbox:installing-ubuntu-on-virtualbox}}\label{\detokenize{vbox/vbox::doc}}
 
-\subsubsection{Introduction}
+\section{Introduction}
 \label{\detokenize{vbox/vbox:introduction}}
 \sphinxAtStartPar
 In this section, we will guide you through the process of installing Ubuntu on VirtualBox. VirtualBox is a powerful virtualization software that allows you to create and run virtual machines on your host operating system. Installing Ubuntu in a virtual machine enables you to practice the course material without affecting your main system.
 
 
-\subsubsection{Step 1: Downloading Ubuntu ISO Image}
+\section{Step 1: Downloading Ubuntu ISO Image}
 \label{\detokenize{vbox/vbox:step-1-downloading-ubuntu-iso-image}}
 \sphinxAtStartPar
 Before you begin, download the latest Ubuntu Desktop ISO image from the official website. Make sure to choose the appropriate version for your system, such as a 64\sphinxhyphen{}bit or 32\sphinxhyphen{}bit image.
@@ -170,7 +172,7 @@ Before you begin, download the latest Ubuntu Desktop ISO image from the official
 \sphinxcode{\sphinxupquote{Ubuntu\_22.04.2}}
 
 
-\subsubsection{Step 2: Creating a New Virtual Machine}
+\section{Step 2: Creating a New Virtual Machine}
 \label{\detokenize{vbox/vbox:step-2-creating-a-new-virtual-machine}}\begin{enumerate}
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
@@ -192,7 +194,7 @@ Choose “Create a virtual hard disk now” and click “Create.”
 \end{enumerate}
 
 
-\subsubsection{Step 3: Installing Ubuntu on the Virtual Machine}
+\section{Step 3: Installing Ubuntu on the Virtual Machine}
 \label{\detokenize{vbox/vbox:step-3-installing-ubuntu-on-the-virtual-machine}}\begin{enumerate}
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
@@ -210,7 +212,7 @@ Follow the on\sphinxhyphen{}screen instructions to install Ubuntu on the virtual
 \end{enumerate}
 
 
-\subsubsection{Step 4: Essential Post\sphinxhyphen{}Installation Setup}
+\section{Step 4: Essential Post\sphinxhyphen{}Installation Setup}
 \label{\detokenize{vbox/vbox:step-4-essential-post-installation-setup}}
 \sphinxAtStartPar
 After Ubuntu is installed on the virtual machine, you may need to perform some post\sphinxhyphen{}installation setup:
@@ -239,14 +241,14 @@ sudo\PYG{+w}{ }./autorun.sh
 \end{enumerate}
 
 
-\subsubsection{Step 5: Install gcc and gfortran libraries}
+\section{Step 5: Install gcc and gfortran libraries}
 \label{\detokenize{vbox/vbox:step-5-install-gcc-and-gfortran-libraries}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 sudo\PYG{+w}{ }apt\PYG{+w}{ }install\PYG{+w}{ }gcc\PYG{+w}{ }gfortran
 \end{sphinxVerbatim}
 
 
-\subsubsection{Conclusion}
+\section{Conclusion}
 \label{\detokenize{vbox/vbox:conclusion}}
 \sphinxAtStartPar
 Congratulations! You have successfully installed Ubuntu on VirtualBox. Your virtual machine is now ready to be used for the course. You can now proceed with the rest of the course content and practice your atomistic simulations with ease.
@@ -260,16 +262,18 @@ Happy learning and experimenting with Python for Atomistic Simulation!
 \sphinxstepscope
 
 
-\subsection{Python for Atomistic Simulation}
+\chapter{Python for Atomistic Simulation}
 \label{\detokenize{basics/basics:python-for-atomistic-simulation}}\label{\detokenize{basics/basics::doc}}
 
-\subsubsection{Setting up a Virtual Environment}
+\section{Setting up a Virtual Environment}
 \label{\detokenize{basics/basics:setting-up-a-virtual-environment}}
 \sphinxAtStartPar
 First, let’s set up a virtual environment using \sphinxtitleref{virtualenv}. If you haven’t installed \sphinxtitleref{virtualenv} yet, you can do it by running the following command:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-pip\PYG{+w}{ }install\PYG{+w}{ }virtualenv
+sudo\PYG{+w}{ }apt\PYG{+w}{ }install\PYG{+w}{ }python3\PYGZhy{}pip
+sudo\PYG{+w}{ }apt\PYG{+w}{ }install\PYG{+w}{ }python3\PYGZhy{}tk
+pip3\PYG{+w}{ }install\PYG{+w}{ }virtualenv
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
@@ -284,10 +288,12 @@ Next, activate the virtual environment (on macOS/Linux):
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n+nb}{source}\PYG{+w}{ }envase/bin/activate
+which\PYG{+w}{ }python
+which\PYG{+w}{ }pip
 \end{sphinxVerbatim}
 
 
-\subsubsection{Installing ASE}
+\section{Installing ASE}
 \label{\detokenize{basics/basics:installing-ase}}
 \sphinxAtStartPar
 Now that we have the virtual environment set up, let’s proceed to install ASE (Atomic Simulation Environment). We’ll use \sphinxtitleref{pip} to install it within the virtual environment:
@@ -300,19 +306,19 @@ pip\PYG{+w}{ }install\PYG{+w}{ }ase
 ASE is now successfully installed in your virtual environment and ready to use!
 
 
-\subsubsection{Part 3: Python Basics Review}
+\section{Part 3: Python Basics Review}
 \label{\detokenize{basics/basics:part-3-python-basics-review}}
 \sphinxAtStartPar
 Let’s start with a brief review of some Python basics. We’ll cover the introduction to Python, variables and data types, control flow, loops, functions, and an overview of NumPy and Matplotlib.
 
 
-\subsubsection{Introduction to Python}
+\section{Introduction to Python}
 \label{\detokenize{basics/basics:introduction-to-python}}
 \sphinxAtStartPar
 Python is a versatile, high\sphinxhyphen{}level programming language that’s easy to learn and widely used in various fields, including scientific computing and data analysis.
 
 
-\paragraph{Variables and Data Types}
+\subsection{Variables and Data Types}
 \label{\detokenize{basics/basics:variables-and-data-types}}
 \sphinxAtStartPar
 In Python, you can declare variables and assign values to them. Python is dynamically typed, meaning you don’t need to specify the data type explicitly.
@@ -329,7 +335,7 @@ Python Code for Variables and Data Types:
 \end{sphinxVerbatim}
 
 
-\paragraph{Control Flow \sphinxhyphen{} Conditional Statements and Loops}
+\subsection{Control Flow \sphinxhyphen{} Conditional Statements and Loops}
 \label{\detokenize{basics/basics:control-flow-conditional-statements-and-loops}}
 \sphinxAtStartPar
 Python provides various control flow constructs, such as if\sphinxhyphen{}else statements and loops (for and while), to control the program’s flow based on conditions.
@@ -358,7 +364,7 @@ Python Code for Control Flow:
 \end{sphinxVerbatim}
 
 
-\subsubsection{Functions}
+\section{Functions}
 \label{\detokenize{basics/basics:functions}}
 \sphinxAtStartPar
 Functions allow us to group a block of code and execute it whenever needed. They promote code reusability and modularity.
@@ -375,7 +381,7 @@ Python Code for Functions:
 \end{sphinxVerbatim}
 
 
-\subsubsection{NumPy Basics}
+\section{NumPy Basics}
 \label{\detokenize{basics/basics:numpy-basics}}
 \sphinxAtStartPar
 NumPy is a fundamental library for numerical computing in Python. It provides support for large, multi\sphinxhyphen{}dimensional arrays and matrices, along with an extensive collection of high\sphinxhyphen{}level mathematical functions to operate on these arrays.
@@ -398,7 +404,7 @@ Python Code for NumPy Basics:
 \end{sphinxVerbatim}
 
 
-\subsubsection{Introduction to Matplotlib}
+\section{Introduction to Matplotlib}
 \label{\detokenize{basics/basics:introduction-to-matplotlib}}
 \sphinxAtStartPar
 Matplotlib is a widely\sphinxhyphen{}used library for creating static, interactive, and animated plots in Python. It enables data visualization with a wide range of customization options.
@@ -421,7 +427,7 @@ Python Code for Matplotlib:
 \end{sphinxVerbatim}
 
 
-\subsubsection{Conclusion}
+\section{Conclusion}
 \label{\detokenize{basics/basics:conclusion}}
 \sphinxAtStartPar
 Congratulations! You’ve completed the Python basics review and set up the ASE environment within your virtual environment. In the next section, we’ll delve deeper into atomistic simulations with ASE and Python.
@@ -431,6 +437,333 @@ Remember to activate the virtual environment whenever you work on the course mat
 
 \sphinxAtStartPar
 Happy learning and happy experimenting with Python for Atomistic Simulation!
+
+\sphinxstepscope
+
+
+\chapter{ASE BASICS}
+\label{\detokenize{asebasics/asebasics:ase-basics}}\label{\detokenize{asebasics/asebasics::doc}}
+
+\section{Section Three: ASE Basic Concepts}
+\label{\detokenize{asebasics/asebasics:section-three-ase-basic-concepts}}
+
+\section{Part 1: Graphical Interface with ASE}
+\label{\detokenize{asebasics/asebasics:part-1-graphical-interface-with-ase}}
+\sphinxAtStartPar
+In this part, we’ll dive into the Atomic Simulation Environment (ASE) graphical interface to explore its powerful graphical tools. The graphical interface allows us to visualize atomic structures, manipulate them, and perform basic operations visually.
+
+
+\section{Step 1: Launching ASE’s GUI}
+\label{\detokenize{asebasics/asebasics:step-1-launching-ase-s-gui}}
+\sphinxAtStartPar
+To get started, let’s launch the ASE graphical interface. Open your Python environment, and we’ll use the following Python code:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{ase}\PYG{n+nn}{.}\PYG{n+nn}{visualize} \PYG{k+kn}{import} \PYG{n}{view}
+
+\PYG{c+c1}{\PYGZsh{} Create an example atomic structure (you can use your own coordinates)}
+\PYG{c+c1}{\PYGZsh{} For example, let\PYGZsq{}s create a simple hydrogen molecule}
+\PYG{k+kn}{from} \PYG{n+nn}{ase} \PYG{k+kn}{import} \PYG{n}{Atoms}
+\PYG{n}{atoms} \PYG{o}{=} \PYG{n}{Atoms}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{H2}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{positions}\PYG{o}{=}\PYG{p}{[}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mf}{0.74}\PYG{p}{]}\PYG{p}{]}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Visualize the structure}
+\PYG{n}{view}\PYG{p}{(}\PYG{n}{atoms}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+ASE’s graphical interface should now open, displaying the atomic structure of the hydrogen molecule. You can rotate, zoom, and interact with the 3D visualization to explore the molecule.
+
+
+\section{Step 2: Basic Visualization and Manipulation}
+\label{\detokenize{asebasics/asebasics:step-2-basic-visualization-and-manipulation}}
+\sphinxAtStartPar
+In the GUI, you can access various tools to manipulate the atomic structure:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Use the mouse to rotate, pan, and zoom the 3D view.
+
+\item {} 
+\sphinxAtStartPar
+Right\sphinxhyphen{}click on atoms to see their properties and edit their attributes.
+
+\item {} 
+\sphinxAtStartPar
+Select and move atoms by left\sphinxhyphen{}clicking and dragging.
+
+\item {} 
+\sphinxAtStartPar
+Use the “Add” tool to add new atoms to the structure.
+
+\item {} 
+\sphinxAtStartPar
+Delete atoms using the “Remove” tool.
+
+\end{itemize}
+
+
+\section{Step 3: Periodic Models and Reciprocal Lattice}
+\label{\detokenize{asebasics/asebasics:step-3-periodic-models-and-reciprocal-lattice}}
+\sphinxAtStartPar
+ASE also allows us to work with periodic systems. Let’s explore how to create periodic models and visualize their reciprocal lattice.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Create a periodic model of a crystal, such as FCC or BCC.
+
+\item {} 
+\sphinxAtStartPar
+Visualize the reciprocal lattice of the crystal to understand its Brillouin zone.
+
+\end{itemize}
+
+
+\section{Step 4: Building Nanostructures and Nanotubes}
+\label{\detokenize{asebasics/asebasics:step-4-building-nanostructures-and-nanotubes}}
+\sphinxAtStartPar
+ASE makes it easy to construct nanostructures and nanotubes. Let’s build a carbon nanotube as an example:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Create a graphene sheet.
+
+\item {} 
+\sphinxAtStartPar
+Roll the graphene sheet to form a carbon nanotube.
+
+\item {} 
+\sphinxAtStartPar
+Visualize the nanotube’s structure and properties.
+
+\end{itemize}
+
+
+\section{Part 2: Command Line Interface with ASE}
+\label{\detokenize{asebasics/asebasics:part-2-command-line-interface-with-ase}}
+\sphinxAtStartPar
+In this part, we’ll explore the ASE command line interface using the terminal or Jupyter (or IPython) to interact with ASE programmatically.
+
+
+\section{Step 1: Terminal or IPython Setup}
+\label{\detokenize{asebasics/asebasics:step-1-terminal-or-ipython-setup}}
+\sphinxAtStartPar
+If you haven’t installed Jupyter or IPython, you can install it using the following command:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+pip\PYG{+w}{ }install\PYG{+w}{ }jupyter
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+or
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+pip\PYG{+w}{ }install\PYG{+w}{ }ipython
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+To access the command line interface, launch Jupyter or IPython in your terminal:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+jupyter\PYG{+w}{ }notebook
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+or
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+ipython
+\end{sphinxVerbatim}
+
+
+\section{Step 2: Creating Atomic Structures with the Atoms Object}
+\label{\detokenize{asebasics/asebasics:step-2-creating-atomic-structures-with-the-atoms-object}}
+\sphinxAtStartPar
+ASE represents atomic structures using the \sphinxtitleref{Atoms} object. Let’s create and manipulate atomic structures programmatically:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{ase} \PYG{k+kn}{import} \PYG{n}{Atoms}
+
+\PYG{c+c1}{\PYGZsh{} Create a water molecule}
+\PYG{n}{water} \PYG{o}{=} \PYG{n}{Atoms}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{H2O}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{positions}\PYG{o}{=}\PYG{p}{[}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mf}{0.74}\PYG{p}{,} \PYG{l+m+mf}{0.74}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mf}{0.74}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{]}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Print the atomic structure}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{water}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{Step 3: Reading and Writing Atomic Structure Files}
+\label{\detokenize{asebasics/asebasics:step-3-reading-and-writing-atomic-structure-files}}
+\sphinxAtStartPar
+ASE supports various file formats for reading and writing atomic structures. Let’s explore how to read and write structures:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Save the structure to a file in XYZ format}
+\PYG{n}{water}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{water.xyz}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Load a structure from a file}
+\PYG{k+kn}{from} \PYG{n+nn}{ase}\PYG{n+nn}{.}\PYG{n+nn}{io} \PYG{k+kn}{import} \PYG{n}{read}
+\PYG{n}{loaded\PYGZus{}water} \PYG{o}{=} \PYG{n}{read}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{water.xyz}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{Step 4: Using Calculators for Energy Calculations}
+\label{\detokenize{asebasics/asebasics:step-4-using-calculators-for-energy-calculations}}
+\sphinxAtStartPar
+ASE provides calculators to perform energy and force calculations for atomic structures. Let’s use a calculator to optimize the water molecule’s geometry:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{ase}\PYG{n+nn}{.}\PYG{n+nn}{calculators}\PYG{n+nn}{.}\PYG{n+nn}{emt} \PYG{k+kn}{import} \PYG{n}{EMT}
+
+\PYG{c+c1}{\PYGZsh{} Set up the EMT calculator}
+\PYG{n}{water}\PYG{o}{.}\PYG{n}{set\PYGZus{}calculator}\PYG{p}{(}\PYG{n}{EMT}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Optimize the structure}
+\PYG{k+kn}{from} \PYG{n+nn}{ase}\PYG{n+nn}{.}\PYG{n+nn}{optimize} \PYG{k+kn}{import} \PYG{n}{BFGS}
+\PYG{n}{optimizer} \PYG{o}{=} \PYG{n}{BFGS}\PYG{p}{(}\PYG{n}{water}\PYG{p}{)}
+\PYG{n}{optimizer}\PYG{o}{.}\PYG{n}{run}\PYG{p}{(}\PYG{n}{fmax}\PYG{o}{=}\PYG{l+m+mf}{0.01}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{Step 5: Creating Supercells and Applying Transformations}
+\label{\detokenize{asebasics/asebasics:step-5-creating-supercells-and-applying-transformations}}
+\sphinxAtStartPar
+ASE allows you to create supercells by replicating an existing structure. We’ll apply transformations to structures and create supercells programmatically:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Create a supercell by replicating the water molecule}
+\PYG{n}{supercell} \PYG{o}{=} \PYG{n}{water} \PYG{o}{*} \PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Apply a transformation matrix to rotate the structure}
+\PYG{k+kn}{from} \PYG{n+nn}{ase} \PYG{k+kn}{import} \PYG{n}{matrix}
+\PYG{n}{transformation\PYGZus{}matrix} \PYG{o}{=} \PYG{n}{matrix}\PYG{o}{.}\PYG{n}{transformation\PYGZus{}matrix}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{transformed\PYGZus{}water} \PYG{o}{=} \PYG{n}{water}\PYG{o}{.}\PYG{n}{copy}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{transformed\PYGZus{}water}\PYG{o}{.}\PYG{n}{set\PYGZus{}cell}\PYG{p}{(}\PYG{n}{transformed\PYGZus{}water}\PYG{o}{.}\PYG{n}{cell} \PYG{o}{@} \PYG{n}{transformation\PYGZus{}matrix}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Now you have explored ASE’s graphical and command line interfaces, including periodic models, reciprocal lattice, nanostructures, and important concepts like the \sphinxtitleref{Atoms} object, file IO, calculators, and supercells. These skills provide a strong foundation for your atomistic simulation journey!
+
+\sphinxAtStartPar
+That’s it for this section. In the next section, we’ll delve into more advanced concepts using ASE for solid\sphinxhyphen{}state physics and quantum chemistry simulations.
+
+\sphinxAtStartPar
+Happy exploring and happy learning with Python for Atomistic Simulation!
+
+\sphinxstepscope
+
+
+\chapter{Density Functional Theory (DFT)}
+\label{\detokenize{dft/dft:density-functional-theory-dft}}\label{\detokenize{dft/dft::doc}}
+
+\section{Introduction to Density Functional Theory (DFT)}
+\label{\detokenize{dft/dft:introduction-to-density-functional-theory-dft}}
+\sphinxAtStartPar
+In this section, we’ll introduce you to the fundamental principles of Density Functional Theory (DFT), a widely used approach in computational materials science and quantum chemistry.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+What is Density Functional Theory (DFT)?
+\sphinxhyphen{} DFT basics: Electronic density, total energy, and the Hohenberg\sphinxhyphen{}Kohn theorem.
+\sphinxhyphen{} Kohn\sphinxhyphen{}Sham approach: Solving the many\sphinxhyphen{}body Schrödinger equation using fictitious non\sphinxhyphen{}interacting electrons.
+\begin{equation*}
+\begin{split}\hat{H}_{KS}\psi_i = \left(-\frac{\hbar^2}{2m}\nabla^2 + V_{ext} + V_{H}[\rho] + V_{XC}[\rho]\right)\psi_i = \epsilon_i\psi_i\end{split}
+\end{equation*}
+\sphinxAtStartPar
+In the Kohn\sphinxhyphen{}Sham approach, we map the interacting system to an auxiliary non\sphinxhyphen{}interacting system of electrons with effective potentials.
+
+\item {} 
+\sphinxAtStartPar
+The Kohn\sphinxhyphen{}Sham Equations
+\sphinxhyphen{} Kohn\sphinxhyphen{}Sham equations derivation.
+\sphinxhyphen{} Self\sphinxhyphen{}consistent field (SCF) method for finding the electronic structure.
+\begin{equation*}
+\begin{split}V_{eff}[\rho](r) = V_{ext}(r) + \int\frac{\rho(r')}{|r - r'|}dr' + \frac{\delta E_{XC}}{\delta\rho(r)}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+The Kohn\sphinxhyphen{}Sham equations represent a set of equations where the electron wavefunctions and energies are obtained self\sphinxhyphen{}consistently to minimize the total energy of the system.
+
+\end{enumerate}
+
+
+\section{Exchange\sphinxhyphen{}Correlation Functionals in DFT}
+\label{\detokenize{dft/dft:exchange-correlation-functionals-in-dft}}
+\sphinxAtStartPar
+In this section, we’ll focus on exchange\sphinxhyphen{}correlation functionals, a crucial aspect of DFT that accounts for electron\sphinxhyphen{}electron interactions.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Introduction to Exchange\sphinxhyphen{}Correlation Functionals
+\sphinxhyphen{} The role of exchange and correlation in DFT.
+\sphinxhyphen{} Local Density Approximation (LDA) and Generalized Gradient Approximation (GGA).
+\begin{equation*}
+\begin{split}E_{XC}^{LDA}[\rho] = \int \epsilon_{XC}^{LDA}[\rho](r) \rho(r) dr
+E_{XC}^{GGA}[\rho] = \int \epsilon_{XC}^{GGA}[\rho](r) \rho(r) dr\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Exchange\sphinxhyphen{}correlation functionals capture the quantum mechanical exchange and correlation effects of electrons, essential for an accurate description of the electronic system.
+
+\item {} 
+\sphinxAtStartPar
+Beyond LDA and GGA
+\sphinxhyphen{} Meta\sphinxhyphen{}GGA and hybrid functionals.
+\sphinxhyphen{} Overview of hybrid functionals like B3LYP and PBE0.
+\begin{equation*}
+\begin{split}E_{XC}^{meta-GGA}[\rho] = \int \epsilon_{XC}^{meta-GGA}[\rho](r) \rho(r) dr
+E_{XC}^{hybrid}[\rho] = (1 - \alpha)E_{XC}^{GGA}[\rho] + \alpha E_{XC}^{HF}[\rho]\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Beyond LDA and GGA, meta\sphinxhyphen{}GGA and hybrid functionals offer improved accuracy for specific systems, combining the advantages of both local and non\sphinxhyphen{}local functionals.
+
+\end{enumerate}
+
+
+\section{Solving Kohn\sphinxhyphen{}Sham Equations with Different Basis Sets}
+\label{\detokenize{dft/dft:solving-kohn-sham-equations-with-different-basis-sets}}
+\sphinxAtStartPar
+In this section, we’ll explore different basis sets used to solve the Kohn\sphinxhyphen{}Sham equations in Density Functional Theory.
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Plane Wave Basis Set
+\sphinxhyphen{} Introduction to the plane wave basis set.
+\sphinxhyphen{} Solving Kohn\sphinxhyphen{}Sham equations using plane waves.
+\sphinxhyphen{} Codes that use plane wave basis sets: Quantum ESPRESSO, VASP.
+
+\sphinxAtStartPar
+Plane wave basis sets provide an efficient representation of electronic wavefunctions in periodic systems, making them well\sphinxhyphen{}suited for solid\sphinxhyphen{}state simulations.
+
+\item {} 
+\sphinxAtStartPar
+Finite Basis Sets
+\sphinxhyphen{} Introduction to finite basis sets (e.g., Gaussian basis sets).
+\sphinxhyphen{} Solving Kohn\sphinxhyphen{}Sham equations using finite basis sets.
+\sphinxhyphen{} Codes that use finite basis sets: NWChem, Gaussian.
+
+\sphinxAtStartPar
+Finite basis sets are widely used in quantum chemistry calculations for molecular systems, offering flexibility and accuracy for localized electronic states.
+
+\item {} 
+\sphinxAtStartPar
+Pseudopotentials and Basis Set Quality
+\sphinxhyphen{} Pseudopotentials and their role in reducing the computational cost.
+\sphinxhyphen{} Evaluating the quality of basis sets for accuracy and efficiency.
+
+\sphinxAtStartPar
+Pseudopotentials approximate the effect of core electrons, reducing the computational burden while maintaining accuracy for valence electrons.
+
+\end{enumerate}
+
+
+\section{Conclusion}
+\label{\detokenize{dft/dft:conclusion}}
+\sphinxAtStartPar
+Congratulations on completing the course on Density Functional Theory (DFT) and different basis sets! You’ve gained essential knowledge about DFT’s principles, exchange\sphinxhyphen{}correlation functionals, and the Kohn\sphinxhyphen{}Sham equations. Additionally, you’ve explored different basis sets like plane waves and finite basis sets used to solve the Kohn\sphinxhyphen{}Sham equations in various DFT codes.
+
+\sphinxAtStartPar
+DFT, along with the appropriate basis set, is a powerful tool in materials science and quantum chemistry, enabling accurate and efficient simulations of complex systems. Continue exploring and applying DFT with different basis sets to solve real\sphinxhyphen{}world problems, and you’ll become a proficient user in the exciting world of computational science!
 
 
 \chapter{Indices and tables}

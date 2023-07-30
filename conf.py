@@ -23,7 +23,7 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
-    'sphinx_rtd_theme',
+    'sphinx_rtd_theme'
 ]
 
 templates_path = ['_templates']
@@ -36,3 +36,5 @@ exclude_patterns = []
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+mathjax_path = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js'

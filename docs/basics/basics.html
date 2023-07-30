@@ -19,6 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ASE BASICS" href="../asebasics/asebasics.html" />
     <link rel="prev" title="Installing Ubuntu on VirtualBox" href="../vbox/vbox.html" /> 
 </head>
 
@@ -43,6 +44,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vbox/vbox.html">Installing Ubuntu on VirtualBox</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Python for Atomistic Simulation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#setting-up-a-virtual-environment">Setting up a Virtual Environment</a></li>
@@ -59,6 +61,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../asebasics/asebasics.html">ASE BASICS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dft/dft.html">Density Functional Theory (DFT)</a></li>
 </ul>
 
         </div>
@@ -90,7 +94,9 @@
 <section id="setting-up-a-virtual-environment">
 <h2>Setting up a Virtual Environment<a class="headerlink" href="#setting-up-a-virtual-environment" title="Permalink to this heading"></a></h2>
 <p>First, let’s set up a virtual environment using <cite>virtualenv</cite>. If you haven’t installed <cite>virtualenv</cite> yet, you can do it by running the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>virtualenv
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-tk
+pip3<span class="w"> </span>install<span class="w"> </span>virtualenv
 </pre></div>
 </div>
 <p>Once <cite>virtualenv</cite> is installed, let’s create the virtual environment named “envase”:</p>
@@ -99,6 +105,8 @@
 </div>
 <p>Next, activate the virtual environment (on macOS/Linux):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>envase/bin/activate
+which<span class="w"> </span>python
+which<span class="w"> </span>pip
 </pre></div>
 </div>
 </section>
@@ -215,6 +223,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../vbox/vbox.html" class="btn btn-neutral float-left" title="Installing Ubuntu on VirtualBox" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../asebasics/asebasics.html" class="btn btn-neutral float-right" title="ASE BASICS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

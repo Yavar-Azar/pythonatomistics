@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASE BASICS &mdash; pythonatomistics 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Density Functional Theory (DFT)" href="../dft/dft.html" />
+    <link rel="prev" title="Python for Atomistic Simulation" href="../basics/basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pythonatomistics
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vbox/vbox.html">Installing Ubuntu on VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/basics.html">Python for Atomistic Simulation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ASE BASICS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#section-three-ase-basic-concepts">Section Three: ASE Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#part-1-graphical-interface-with-ase">Part 1: Graphical Interface with ASE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-launching-ase-s-gui">Step 1: Launching ASE’s GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-basic-visualization-and-manipulation">Step 2: Basic Visualization and Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-periodic-models-and-reciprocal-lattice">Step 3: Periodic Models and Reciprocal Lattice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-building-nanostructures-and-nanotubes">Step 4: Building Nanostructures and Nanotubes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#part-2-command-line-interface-with-ase">Part 2: Command Line Interface with ASE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-terminal-or-ipython-setup">Step 1: Terminal or IPython Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-creating-atomic-structures-with-the-atoms-object">Step 2: Creating Atomic Structures with the Atoms Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-reading-and-writing-atomic-structure-files">Step 3: Reading and Writing Atomic Structure Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-using-calculators-for-energy-calculations">Step 4: Using Calculators for Energy Calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-5-creating-supercells-and-applying-transformations">Step 5: Creating Supercells and Applying Transformations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dft/dft.html">Density Functional Theory (DFT)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pythonatomistics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ASE BASICS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/asebasics/asebasics.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ase-basics">
+<h1>ASE BASICS<a class="headerlink" href="#ase-basics" title="Permalink to this heading"></a></h1>
+<section id="section-three-ase-basic-concepts">
+<h2>Section Three: ASE Basic Concepts<a class="headerlink" href="#section-three-ase-basic-concepts" title="Permalink to this heading"></a></h2>
+</section>
+<section id="part-1-graphical-interface-with-ase">
+<h2>Part 1: Graphical Interface with ASE<a class="headerlink" href="#part-1-graphical-interface-with-ase" title="Permalink to this heading"></a></h2>
+<p>In this part, we’ll dive into the Atomic Simulation Environment (ASE) graphical interface to explore its powerful graphical tools. The graphical interface allows us to visualize atomic structures, manipulate them, and perform basic operations visually.</p>
+</section>
+<section id="step-1-launching-ase-s-gui">
+<h2>Step 1: Launching ASE’s GUI<a class="headerlink" href="#step-1-launching-ase-s-gui" title="Permalink to this heading"></a></h2>
+<p>To get started, let’s launch the ASE graphical interface. Open your Python environment, and we’ll use the following Python code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.visualize</span> <span class="kn">import</span> <span class="n">view</span>
+
+<span class="c1"># Create an example atomic structure (you can use your own coordinates)</span>
+<span class="c1"># For example, let&#39;s create a simple hydrogen molecule</span>
+<span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span>
+<span class="n">atoms</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span><span class="s2">&quot;H2&quot;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">]])</span>
+
+<span class="c1"># Visualize the structure</span>
+<span class="n">view</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>ASE’s graphical interface should now open, displaying the atomic structure of the hydrogen molecule. You can rotate, zoom, and interact with the 3D visualization to explore the molecule.</p>
+</section>
+<section id="step-2-basic-visualization-and-manipulation">
+<h2>Step 2: Basic Visualization and Manipulation<a class="headerlink" href="#step-2-basic-visualization-and-manipulation" title="Permalink to this heading"></a></h2>
+<p>In the GUI, you can access various tools to manipulate the atomic structure:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Use the mouse to rotate, pan, and zoom the 3D view.</p></li>
+<li><p>Right-click on atoms to see their properties and edit their attributes.</p></li>
+<li><p>Select and move atoms by left-clicking and dragging.</p></li>
+<li><p>Use the “Add” tool to add new atoms to the structure.</p></li>
+<li><p>Delete atoms using the “Remove” tool.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="step-3-periodic-models-and-reciprocal-lattice">
+<h2>Step 3: Periodic Models and Reciprocal Lattice<a class="headerlink" href="#step-3-periodic-models-and-reciprocal-lattice" title="Permalink to this heading"></a></h2>
+<p>ASE also allows us to work with periodic systems. Let’s explore how to create periodic models and visualize their reciprocal lattice.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Create a periodic model of a crystal, such as FCC or BCC.</p></li>
+<li><p>Visualize the reciprocal lattice of the crystal to understand its Brillouin zone.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="step-4-building-nanostructures-and-nanotubes">
+<h2>Step 4: Building Nanostructures and Nanotubes<a class="headerlink" href="#step-4-building-nanostructures-and-nanotubes" title="Permalink to this heading"></a></h2>
+<p>ASE makes it easy to construct nanostructures and nanotubes. Let’s build a carbon nanotube as an example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Create a graphene sheet.</p></li>
+<li><p>Roll the graphene sheet to form a carbon nanotube.</p></li>
+<li><p>Visualize the nanotube’s structure and properties.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="part-2-command-line-interface-with-ase">
+<h2>Part 2: Command Line Interface with ASE<a class="headerlink" href="#part-2-command-line-interface-with-ase" title="Permalink to this heading"></a></h2>
+<p>In this part, we’ll explore the ASE command line interface using the terminal or Jupyter (or IPython) to interact with ASE programmatically.</p>
+</section>
+<section id="step-1-terminal-or-ipython-setup">
+<h2>Step 1: Terminal or IPython Setup<a class="headerlink" href="#step-1-terminal-or-ipython-setup" title="Permalink to this heading"></a></h2>
+<p>If you haven’t installed Jupyter or IPython, you can install it using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyter
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>ipython
+</pre></div>
+</div>
+<p>To access the command line interface, launch Jupyter or IPython in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>notebook
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ipython
+</pre></div>
+</div>
+</section>
+<section id="step-2-creating-atomic-structures-with-the-atoms-object">
+<h2>Step 2: Creating Atomic Structures with the Atoms Object<a class="headerlink" href="#step-2-creating-atomic-structures-with-the-atoms-object" title="Permalink to this heading"></a></h2>
+<p>ASE represents atomic structures using the <cite>Atoms</cite> object. Let’s create and manipulate atomic structures programmatically:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span>
+
+<span class="c1"># Create a water molecule</span>
+<span class="n">water</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.74</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+<span class="c1"># Print the atomic structure</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">water</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="step-3-reading-and-writing-atomic-structure-files">
+<h2>Step 3: Reading and Writing Atomic Structure Files<a class="headerlink" href="#step-3-reading-and-writing-atomic-structure-files" title="Permalink to this heading"></a></h2>
+<p>ASE supports various file formats for reading and writing atomic structures. Let’s explore how to read and write structures:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save the structure to a file in XYZ format</span>
+<span class="n">water</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;water.xyz&quot;</span><span class="p">)</span>
+
+<span class="c1"># Load a structure from a file</span>
+<span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+<span class="n">loaded_water</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s2">&quot;water.xyz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="step-4-using-calculators-for-energy-calculations">
+<h2>Step 4: Using Calculators for Energy Calculations<a class="headerlink" href="#step-4-using-calculators-for-energy-calculations" title="Permalink to this heading"></a></h2>
+<p>ASE provides calculators to perform energy and force calculations for atomic structures. Let’s use a calculator to optimize the water molecule’s geometry:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.calculators.emt</span> <span class="kn">import</span> <span class="n">EMT</span>
+
+<span class="c1"># Set up the EMT calculator</span>
+<span class="n">water</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">EMT</span><span class="p">())</span>
+
+<span class="c1"># Optimize the structure</span>
+<span class="kn">from</span> <span class="nn">ase.optimize</span> <span class="kn">import</span> <span class="n">BFGS</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">BFGS</span><span class="p">(</span><span class="n">water</span><span class="p">)</span>
+<span class="n">optimizer</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="step-5-creating-supercells-and-applying-transformations">
+<h2>Step 5: Creating Supercells and Applying Transformations<a class="headerlink" href="#step-5-creating-supercells-and-applying-transformations" title="Permalink to this heading"></a></h2>
+<p>ASE allows you to create supercells by replicating an existing structure. We’ll apply transformations to structures and create supercells programmatically:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a supercell by replicating the water molecule</span>
+<span class="n">supercell</span> <span class="o">=</span> <span class="n">water</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Apply a transformation matrix to rotate the structure</span>
+<span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">matrix</span>
+<span class="n">transformation_matrix</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">transformation_matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">transformed_water</span> <span class="o">=</span> <span class="n">water</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">transformed_water</span><span class="o">.</span><span class="n">set_cell</span><span class="p">(</span><span class="n">transformed_water</span><span class="o">.</span><span class="n">cell</span> <span class="o">@</span> <span class="n">transformation_matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now you have explored ASE’s graphical and command line interfaces, including periodic models, reciprocal lattice, nanostructures, and important concepts like the <cite>Atoms</cite> object, file IO, calculators, and supercells. These skills provide a strong foundation for your atomistic simulation journey!</p>
+<p>That’s it for this section. In the next section, we’ll delve into more advanced concepts using ASE for solid-state physics and quantum chemistry simulations.</p>
+<p>Happy exploring and happy learning with Python for Atomistic Simulation!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../basics/basics.html" class="btn btn-neutral float-left" title="Python for Atomistic Simulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../dft/dft.html" class="btn btn-neutral float-right" title="Density Functional Theory (DFT)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Yavar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

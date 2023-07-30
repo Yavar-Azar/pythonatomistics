@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Density Functional Theory (DFT) &mdash; pythonatomistics 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="ASE BASICS" href="../asebasics/asebasics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pythonatomistics
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vbox/vbox.html">Installing Ubuntu on VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/basics.html">Python for Atomistic Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asebasics/asebasics.html">ASE BASICS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Density Functional Theory (DFT)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-to-density-functional-theory-dft">Introduction to Density Functional Theory (DFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exchange-correlation-functionals-in-dft">Exchange-Correlation Functionals in DFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#solving-kohn-sham-equations-with-different-basis-sets">Solving Kohn-Sham Equations with Different Basis Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pythonatomistics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Density Functional Theory (DFT)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/dft/dft.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="density-functional-theory-dft">
+<h1>Density Functional Theory (DFT)<a class="headerlink" href="#density-functional-theory-dft" title="Permalink to this heading"></a></h1>
+<section id="introduction-to-density-functional-theory-dft">
+<h2>Introduction to Density Functional Theory (DFT)<a class="headerlink" href="#introduction-to-density-functional-theory-dft" title="Permalink to this heading"></a></h2>
+<p>In this section, we’ll introduce you to the fundamental principles of Density Functional Theory (DFT), a widely used approach in computational materials science and quantum chemistry.</p>
+<ol class="arabic">
+<li><p>What is Density Functional Theory (DFT)?
+- DFT basics: Electronic density, total energy, and the Hohenberg-Kohn theorem.
+- Kohn-Sham approach: Solving the many-body Schrödinger equation using fictitious non-interacting electrons.</p>
+<div class="math notranslate nohighlight">
+\[\hat{H}_{KS}\psi_i = \left(-\frac{\hbar^2}{2m}\nabla^2 + V_{ext} + V_{H}[\rho] + V_{XC}[\rho]\right)\psi_i = \epsilon_i\psi_i\]</div>
+<p>In the Kohn-Sham approach, we map the interacting system to an auxiliary non-interacting system of electrons with effective potentials.</p>
+</li>
+<li><p>The Kohn-Sham Equations
+- Kohn-Sham equations derivation.
+- Self-consistent field (SCF) method for finding the electronic structure.</p>
+<div class="math notranslate nohighlight">
+\[V_{eff}[\rho](r) = V_{ext}(r) + \int\frac{\rho(r')}{|r - r'|}dr' + \frac{\delta E_{XC}}{\delta\rho(r)}\]</div>
+<p>The Kohn-Sham equations represent a set of equations where the electron wavefunctions and energies are obtained self-consistently to minimize the total energy of the system.</p>
+</li>
+</ol>
+</section>
+<section id="exchange-correlation-functionals-in-dft">
+<h2>Exchange-Correlation Functionals in DFT<a class="headerlink" href="#exchange-correlation-functionals-in-dft" title="Permalink to this heading"></a></h2>
+<p>In this section, we’ll focus on exchange-correlation functionals, a crucial aspect of DFT that accounts for electron-electron interactions.</p>
+<ol class="arabic">
+<li><p>Introduction to Exchange-Correlation Functionals
+- The role of exchange and correlation in DFT.
+- Local Density Approximation (LDA) and Generalized Gradient Approximation (GGA).</p>
+<div class="math notranslate nohighlight">
+\[E_{XC}^{LDA}[\rho] = \int \epsilon_{XC}^{LDA}[\rho](r) \rho(r) dr
+E_{XC}^{GGA}[\rho] = \int \epsilon_{XC}^{GGA}[\rho](r) \rho(r) dr\]</div>
+<p>Exchange-correlation functionals capture the quantum mechanical exchange and correlation effects of electrons, essential for an accurate description of the electronic system.</p>
+</li>
+<li><p>Beyond LDA and GGA
+- Meta-GGA and hybrid functionals.
+- Overview of hybrid functionals like B3LYP and PBE0.</p>
+<div class="math notranslate nohighlight">
+\[E_{XC}^{meta-GGA}[\rho] = \int \epsilon_{XC}^{meta-GGA}[\rho](r) \rho(r) dr
+E_{XC}^{hybrid}[\rho] = (1 - \alpha)E_{XC}^{GGA}[\rho] + \alpha E_{XC}^{HF}[\rho]\]</div>
+<p>Beyond LDA and GGA, meta-GGA and hybrid functionals offer improved accuracy for specific systems, combining the advantages of both local and non-local functionals.</p>
+</li>
+</ol>
+</section>
+<section id="solving-kohn-sham-equations-with-different-basis-sets">
+<h2>Solving Kohn-Sham Equations with Different Basis Sets<a class="headerlink" href="#solving-kohn-sham-equations-with-different-basis-sets" title="Permalink to this heading"></a></h2>
+<p>In this section, we’ll explore different basis sets used to solve the Kohn-Sham equations in Density Functional Theory.</p>
+<ol class="arabic">
+<li><p>Plane Wave Basis Set
+- Introduction to the plane wave basis set.
+- Solving Kohn-Sham equations using plane waves.
+- Codes that use plane wave basis sets: Quantum ESPRESSO, VASP.</p>
+<p>Plane wave basis sets provide an efficient representation of electronic wavefunctions in periodic systems, making them well-suited for solid-state simulations.</p>
+</li>
+<li><p>Finite Basis Sets
+- Introduction to finite basis sets (e.g., Gaussian basis sets).
+- Solving Kohn-Sham equations using finite basis sets.
+- Codes that use finite basis sets: NWChem, Gaussian.</p>
+<p>Finite basis sets are widely used in quantum chemistry calculations for molecular systems, offering flexibility and accuracy for localized electronic states.</p>
+</li>
+<li><p>Pseudopotentials and Basis Set Quality
+- Pseudopotentials and their role in reducing the computational cost.
+- Evaluating the quality of basis sets for accuracy and efficiency.</p>
+<p>Pseudopotentials approximate the effect of core electrons, reducing the computational burden while maintaining accuracy for valence electrons.</p>
+</li>
+</ol>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading"></a></h2>
+<p>Congratulations on completing the course on Density Functional Theory (DFT) and different basis sets! You’ve gained essential knowledge about DFT’s principles, exchange-correlation functionals, and the Kohn-Sham equations. Additionally, you’ve explored different basis sets like plane waves and finite basis sets used to solve the Kohn-Sham equations in various DFT codes.</p>
+<p>DFT, along with the appropriate basis set, is a powerful tool in materials science and quantum chemistry, enabling accurate and efficient simulations of complex systems. Continue exploring and applying DFT with different basis sets to solve real-world problems, and you’ll become a proficient user in the exciting world of computational science!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../asebasics/asebasics.html" class="btn btn-neutral float-left" title="ASE BASICS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Yavar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
