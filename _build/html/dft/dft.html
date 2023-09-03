@@ -21,6 +21,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quantum ESPRESSO Calculations" href="../qease/qease.html" />
     <link rel="prev" title="ASE BASICS" href="../asebasics/asebasics.html" /> 
 </head>
 
@@ -48,6 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vbox/vbox.html">Installing Ubuntu on VirtualBox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basics/basics.html">Python for Atomistic Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crystal/crystal.html">Basics of Crystallography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../asebasics/asebasics.html">ASE BASICS</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Density Functional Theory (DFT)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction-to-density-functional-theory-dft">Introduction to Density Functional Theory (DFT)</a></li>
@@ -56,6 +58,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../qease/qease.html">Quantum ESPRESSO Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nwase/nwase.html">NWChem Calculations with ASE</a></li>
 </ul>
 
         </div>
@@ -89,18 +93,18 @@
 <p>In this section, we’ll introduce you to the fundamental principles of Density Functional Theory (DFT), a widely used approach in computational materials science and quantum chemistry.</p>
 <ol class="arabic">
 <li><p>What is Density Functional Theory (DFT)?
-- DFT basics: Electronic density, total energy, and the Hohenberg-Kohn theorem.
-- Kohn-Sham approach: Solving the many-body Schrödinger equation using fictitious non-interacting electrons.</p>
-<div class="math notranslate nohighlight">
-\[\hat{H}_{KS}\psi_i = \left(-\frac{\hbar^2}{2m}\nabla^2 + V_{ext} + V_{H}[\rho] + V_{XC}[\rho]\right)\psi_i = \epsilon_i\psi_i\]</div>
-<p>In the Kohn-Sham approach, we map the interacting system to an auxiliary non-interacting system of electrons with effective potentials.</p>
+- DFT basics: Electronic density, total energy, and the Hohenberg-Kohn theorem.</p>
+<p>Density Functional Theory (DFT) is a powerful theoretical framework used in computational materials science and quantum chemistry. At its core, DFT deals with the electronic density, which contains all the information about the electronic structure of a system. The Hohenberg-Kohn theorem, a cornerstone of DFT, states that the ground-state electron density uniquely determines the ground-state energy of a many-electron system. This theorem provides the foundation for the development of DFT methods.</p>
+<p>The Hohenberg-Kohn theorem implies that if we can find the ground-state electron density, we can determine the total energy of the system. This idea forms the basis for the practical application of DFT in simulating and understanding the behavior of atoms, molecules, and solids.</p>
+<ul class="simple">
+<li><p>Kohn-Sham approach: Solving the many-body Schrödinger equation using fictitious non-interacting electrons.</p></li>
+</ul>
+<p>In the Kohn-Sham approach, we map the interacting system to an auxiliary non-interacting system of electrons with effective potentials. This transformation simplifies the problem, as non-interacting electrons are easier to handle mathematically. The Kohn-Sham equations, derived from this approach, provide a practical way to calculate the electronic structure of complex systems, making DFT a valuable tool in computational science.</p>
 </li>
 <li><p>The Kohn-Sham Equations
 - Kohn-Sham equations derivation.
 - Self-consistent field (SCF) method for finding the electronic structure.</p>
-<div class="math notranslate nohighlight">
-\[V_{eff}[\rho](r) = V_{ext}(r) + \int\frac{\rho(r')}{|r - r'|}dr' + \frac{\delta E_{XC}}{\delta\rho(r)}\]</div>
-<p>The Kohn-Sham equations represent a set of equations where the electron wavefunctions and energies are obtained self-consistently to minimize the total energy of the system.</p>
+<p>The Kohn-Sham equations represent a set of equations where the electron wavefunctions and energies are obtained self-consistently to minimize the total energy of the system. Solving these equations iteratively allows us to determine the electronic structure, including electron distribution and energies, accurately.</p>
 </li>
 </ol>
 </section>
@@ -110,7 +114,12 @@
 <ol class="arabic">
 <li><p>Introduction to Exchange-Correlation Functionals
 - The role of exchange and correlation in DFT.
-- Local Density Approximation (LDA) and Generalized Gradient Approximation (GGA).</p>
+- The Hohenberg-Kohn theorem and the uniqueness of the exchange-correlation energy functional.</p>
+<p>The Hohenberg-Kohn theorem not only guarantees the existence of an exchange-correlation energy functional but also ensures its uniqueness. This functional is a key ingredient in DFT, representing the electron-electron interactions that are challenging to describe explicitly. Its accurate determination is essential for obtaining reliable electronic structure predictions.</p>
+<ul class="simple">
+<li><p>Local Density Approximation (LDA) and Generalized Gradient Approximation (GGA).</p></li>
+</ul>
+<p>While LDA and GGA are common approaches to approximate the exchange-correlation energy, it’s important to clarify that the definition provided previously for exchange-correlation functionals refers to hybrid functionals. LDA and GGA are simpler approximations that serve as the foundation for more advanced methods like meta-GGA and hybrid functionals.</p>
 <div class="math notranslate nohighlight">
 \[E_{XC}^{LDA}[\rho] = \int \epsilon_{XC}^{LDA}[\rho](r) \rho(r) dr
 E_{XC}^{GGA}[\rho] = \int \epsilon_{XC}^{GGA}[\rho](r) \rho(r) dr\]</div>
@@ -134,24 +143,23 @@ E_{XC}^{hybrid}[\rho] = (1 - \alpha)E_{XC}^{GGA}[\rho] + \alpha E_{XC}^{HF}[\rho
 - Introduction to the plane wave basis set.
 - Solving Kohn-Sham equations using plane waves.
 - Codes that use plane wave basis sets: Quantum ESPRESSO, VASP.</p>
-<p>Plane wave basis sets provide an efficient representation of electronic wavefunctions in periodic systems, making them well-suited for solid-state simulations.</p>
+<p>Plane wave basis sets provide an efficient representation of electronic wavefunctions in periodic systems, making them well-suited for solid-state simulations. Solid-state codes like Quantum ESPRESSO and VASP commonly employ plane wave basis sets due to their effectiveness in describing extended electronic structures.</p>
 </li>
 <li><p>Finite Basis Sets
 - Introduction to finite basis sets (e.g., Gaussian basis sets).
 - Solving Kohn-Sham equations using finite basis sets.
 - Codes that use finite basis sets: NWChem, Gaussian.</p>
-<p>Finite basis sets are widely used in quantum chemistry calculations for molecular systems, offering flexibility and accuracy for localized electronic states.</p>
+<p>Finite basis sets, such as Gaussian basis sets, are widely used in quantum chemistry calculations for molecular systems. These basis sets offer flexibility and accuracy for localized electronic states, making them suitable for a wide range of molecular simulations. Quantum chemistry packages like NWChem and Gaussian are popular choices for performing calculations with finite basis sets.</p>
 </li>
 <li><p>Pseudopotentials and Basis Set Quality
 - Pseudopotentials and their role in reducing the computational cost.
 - Evaluating the quality of basis sets for accuracy and efficiency.</p>
-<p>Pseudopotentials approximate the effect of core electrons, reducing the computational burden while maintaining accuracy for valence electrons.</p>
+<p>Pseudopotentials approximate the effect of core electrons, reducing the computational burden while maintaining accuracy for valence electrons. The choice of pseudopotentials and basis sets can significantly impact the accuracy and efficiency of DFT calculations. Researchers must carefully select appropriate combinations to achieve reliable results within computational constraints.</p>
 </li>
 </ol>
 </section>
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading"></a></h2>
-<p>Congratulations on completing the course on Density Functional Theory (DFT) and different basis sets! You’ve gained essential knowledge about DFT’s principles, exchange-correlation functionals, and the Kohn-Sham equations. Additionally, you’ve explored different basis sets like plane waves and finite basis sets used to solve the Kohn-Sham equations in various DFT codes.</p>
 <p>DFT, along with the appropriate basis set, is a powerful tool in materials science and quantum chemistry, enabling accurate and efficient simulations of complex systems. Continue exploring and applying DFT with different basis sets to solve real-world problems, and you’ll become a proficient user in the exciting world of computational science!</p>
 </section>
 </section>
@@ -161,6 +169,7 @@ E_{XC}^{hybrid}[\rho] = (1 - \alpha)E_{XC}^{GGA}[\rho] + \alpha E_{XC}^{HF}[\rho
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../asebasics/asebasics.html" class="btn btn-neutral float-left" title="ASE BASICS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../qease/qease.html" class="btn btn-neutral float-right" title="Quantum ESPRESSO Calculations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
